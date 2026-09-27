@@ -1,0 +1,285 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Bootstrap recreation of the Designmodo Startup reference page.">
+  <title>Startup — Bootstrap Recreation</title>
+
+  <!-- Bootstrap 5.1.2, matching the supplied Designmodo source -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Typography used by the supplied Designmodo source -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;500;600;700;800&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="site-header">
+  <nav class="navbar navbar-expand-lg">
+    <div class="container site-container">
+      <a class="navbar-brand" href="#top" aria-label="Startup home">
+        <img src="assets/logo-dark.png" alt="startup">
+      </a>
+
+      <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileNav" aria-controls="mobileNav" aria-label="Open navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse justify-content-end d-none d-lg-flex">
+        <ul class="navbar-nav align-items-center">
+          <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#showcase">Work</a></li>
+          <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+          <li class="nav-item"><a class="nav-link" href="#features">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<div class="offcanvas offcanvas-end" tabindex="-1" id="mobileNav" aria-labelledby="mobileNavLabel">
+  <div class="offcanvas-header">
+    <a href="#top" class="mobile-logo" data-bs-dismiss="offcanvas"><img src="assets/logo-dark.png" alt="startup"></a>
+    <button type="button" class="btn-close shadow-none" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <div class="offcanvas-body">
+    <nav class="mobile-links">
+      <a href="#home" data-bs-dismiss="offcanvas">Home</a>
+      <a href="#showcase" data-bs-dismiss="offcanvas">Work</a>
+      <a href="#services" data-bs-dismiss="offcanvas">Services</a>
+      <a href="#features" data-bs-dismiss="offcanvas">About</a>
+      <a href="#contact" data-bs-dismiss="offcanvas">Contact</a>
+    </nav>
+  </div>
+</div>
+
+<main id="top">
+  <!-- Feature 6 -->
+  <section id="home" class="hero-section">
+    <div class="container site-container">
+      <div class="row hero-copy align-items-start">
+        <div class="col-lg-6">
+          <h1>Designing meaningful experiences and solutions for complex real-world challenges.</h1>
+        </div>
+        <div class="col-lg-5 offset-lg-1">
+          <p class="intro-copy">Everything has a meaning and every smaller thing matters. We help you to nudge outcomes for consumers!</p>
+        </div>
+      </div>
+
+      <div class="hero-image-wrap">
+        <img src="assets/feature6.jpeg" class="img-fluid w-100 feature-image-wrap" alt="Startup illustration">
+      </div>
+    </div>
+  </section>
+
+  <!-- Showcase 5 -->
+  <section id="showcase" class="showcase-section">
+    <div class="container site-container">
+      <div class="row showcase-intro align-items-start">
+        <div class="col-lg-6">
+          <h2>Explore incredible ideas built at our agency</h2>
+        </div>
+        <div class="col-lg-5 offset-lg-1">
+          <p class="intro-copy">Combining complementary skills and relentless drive to turn bold ideas into reality.</p>
+          <div class="filter-pills">
+            <button type="button" class="filter-pill active" data-filter="all">All</button>
+            <button type="button" class="filter-pill" data-filter="usability">Usability</button>
+            <button type="button" class="filter-pill" data-filter="branding">Branding</button>
+            <button type="button" class="filter-pill" data-filter="illustrations">Illustrations</button>
+            <button type="button" class="filter-pill" data-filter="design-strategy">Design Strategy</button>
+            <button type="button" class="filter-pill" data-filter="information-design">Information Design</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="row g-4 showcase-grid">
+        <div class="col-md-6 project-card" data-categories="branding,illustrations,design-strategy,information-design">
+          <a href="work-details.html?project=little-planet" class="project-link">
+            <img src="assets/show1.jpg" class="project-image feature-image-wrap" alt="Little Planet">
+            <div class="project-meta"><span>Little Planet</span><span class="project-arrow"></span></div>
+          </a>
+        </div>
+        <div class="col-md-6 project-card" data-categories="usability,design-strategy">
+          <a href="work-details.html?project=trident-tech-lab" class="project-link">
+            <img src="assets/show2.jpg" class="project-image feature-image-wrap" alt="Trident Tech Lab">
+            <div class="project-meta"><span>Trident Tech Lab</span><span class="project-arrow"></span></div>
+          </a>
+        </div>
+        <div class="col-md-6 project-card" data-categories="branding,illustrations">
+          <a href="work-details.html?project=percuro" class="project-link">
+            <img src="assets/show3.jpg" class="project-image feature-image-wrap" alt="Percuro">
+            <div class="project-meta"><span>Percuro</span><span class="project-arrow"></span></div>
+          </a>
+        </div>
+        <div class="col-md-6 project-card" data-categories="usability,information-design">
+          <a href="work-details.html?project=goloco" class="project-link">
+            <img src="assets/show4.jpg" class="project-image feature-image-wrap" alt="Goloco">
+            <div class="project-meta"><span>Goloco</span><span class="project-arrow"></span></div>
+          </a>
+        </div>
+        <div class="col-md-6 project-card" data-categories="information-design,illustrations">
+          <a href="work-details.html?project=learnerscape" class="project-link">
+            <img src="assets/show5.jpg" class="project-image feature-image-wrap" alt="Learnerscape">
+            <div class="project-meta"><span>Learnerscape</span><span class="project-arrow"></span></div>
+          </a>
+        </div>
+        <div class="col-md-6 project-card" data-categories="illustrations,branding">
+          <a href="work-details.html?project=myristica" class="project-link">
+            <img src="assets/show6.jpg" class="project-image feature-image-wrap" alt="Myristica">
+            <div class="project-meta"><span>Myristica</span><span class="project-arrow"></span></div>
+          </a>
+        </div>
+        <div class="col-md-6 project-card" data-categories="usability,branding">
+          <a href="work-details.html?project=small" class="project-link">
+            <img src="assets/show7.jpg" class="project-image feature-image-wrap" alt="Small">
+            <div class="project-meta"><span>Small</span><span class="project-arrow"></span></div>
+          </a>
+        </div>
+        <div class="col-md-6 project-card" data-categories="branding,design-strategy">
+          <a href="work-details.html?project=arthaye" class="project-link">
+            <img src="assets/show8.jpg" class="project-image feature-image-wrap" alt="Arthaye">
+            <div class="project-meta"><span>Arthaye</span><span class="project-arrow"></span></div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section id="services" class="capabilities-section">
+    <div class="container site-container">
+      <div class="row capabilities-row align-items-center">
+        <div class="col-lg-7 capabilities-strip-wrap">
+          <div class="capabilities-strip">
+            <div class="capability-card">
+              <img src="assets/show3.jpg" alt="Percuro">
+              <h4>Percuro</h4>
+              <p>Brand identity built around a modular pattern system.</p>
+            </div>
+            <div class="capability-card">
+              <img src="assets/show4.jpg" alt="Goloco">
+              <h4>Goloco</h4>
+              <p>Wayfinding and signage for a landmark redevelopment.</p>
+            </div>
+            <div class="capability-card">
+              <img src="assets/show5.jpg" alt="Learnerscape">
+              <h4>Learnerscape</h4>
+              <p>Data-driven infographic identity for an education platform.</p>
+            </div>
+            <div class="capability-card">
+              <img src="assets/show8.jpg" alt="Arthaye">
+              <h4>Arthaye</h4>
+              <p>Campaign visual system for a financial services brand.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-5 capabilities-copy">
+          <h2>Crafting impactful brand identities, digital experiences and strategic design solutions.</h2>
+          <p class="capabilities-list">UI/UX Design, Brand Identity, Digital Experiences, Publications, Infographics, Books, Campaigns, Data-Driven Experiences, Industrial &amp; Product Design, Packaging, Service Design.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Feature 18 -->
+  <section id="features" class="feature-section">
+    <div class="container site-container">
+      <div class="row feature-top align-items-center">
+        <div class="col-lg-6 feature-copy">
+          <h2>Our thoughts align towards detailing and process driven approach</h2>
+          <p class="intro-copy">Combining complementary skills and relentless drive to turn bold ideas into reality.</p>
+        </div>
+        <div class="col-lg-5 offset-lg-1">
+          <div class="feature-image-wrap">
+            <img src="assets/feature18.png" class="img-fluid w-100" alt="Startup feature illustration">
+          </div>
+        </div>
+      </div>
+
+      <div class="feature-divider"></div>
+
+      <div id="prices" class="row feature-columns">
+        <div class="col-sm-4">
+          <h3>Build Quick</h3>
+          <p>Everything you need to build your site in one place. All-in-one website builder for designers and creators. Your big idea starts here.</p>
+        </div>
+        <div class="col-sm-4">
+          <h3>A Lot of blocks</h3>
+          <p>Start growing in half the time with an all-in-one website builder - no more long hours spent on the boring stuff!</p>
+        </div>
+        <div class="col-sm-4">
+          <h3>Build Today</h3>
+          <p>Get your idea out there in the way you want it. Start with Startup. The website builder to help you grow - free from bugs and errors.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer id="contact" class="site-footer">
+  <div class="container site-container">
+    <div class="footer-social">
+      <a href="#" aria-label="Twitter"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M22 5.9c-.7.3-1.5.6-2.3.7.8-.5 1.5-1.3 1.8-2.3-.8.5-1.7.8-2.6 1-1.5-1.6-4-1.7-5.6-.2-1 .9-1.4 2.3-1.2 3.6-3.3-.2-6.3-1.8-8.3-4.3-.3.6-.5 1.3-.5 2 0 1.4.7 2.6 1.8 3.3-.6 0-1.2-.2-1.8-.5v.1c0 1.9 1.4 3.5 3.2 3.9-.3.1-.7.1-1 .1-.3 0-.5 0-.7-.1.5 1.6 2 2.7 3.7 2.7-1.4 1.1-3.1 1.7-4.9 1.7H2c1.7 1.1 3.8 1.8 6 1.8 7.2 0 11.2-6 11.2-11.2v-.5c.8-.6 1.4-1.3 1.9-2.1z"/></svg></a>
+      <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M15 4h-2a4 4 0 0 0-4 4v2H7v3h2v7h3v-7h2.6l.4-3H12V8a1 1 0 0 1 1-1h2z"/></svg></a>
+      <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1"/></svg></a>
+    </div>
+    <div class="footer-bottom">
+      <span>Copyright &copy; 2026 thethoughtpattern.com</span>
+      <a href="mailto:contact@thethoughtpattern.com">contact@thethoughtpattern.com</a>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+  // Work section filtering
+  (function () {
+    var pills = document.querySelectorAll('.filter-pill');
+    var cards = document.querySelectorAll('.project-card');
+    pills.forEach(function (pill) {
+      pill.addEventListener('click', function () {
+        pills.forEach(function (p) { p.classList.remove('active'); });
+        pill.classList.add('active');
+        var filter = pill.getAttribute('data-filter');
+        cards.forEach(function (card) {
+          var cats = (card.getAttribute('data-categories') || '').split(',');
+          var show = filter === 'all' || cats.indexOf(filter) !== -1;
+          card.classList.toggle('is-hidden', !show);
+        });
+      });
+    });
+  })();
+
+  // Hero image grows as the page is scrolled past the first fold
+  (function () {
+    var heroSection = document.querySelector('.hero-section');
+    var heroImg = document.querySelector('.hero-image-wrap img');
+    if (!heroSection || !heroImg) return;
+    var ticking = false;
+
+    function update() {
+      var heroHeight = heroSection.offsetHeight || 1;
+      var scrolled = Math.min(Math.max(window.scrollY, 0), heroHeight);
+      var progress = scrolled / heroHeight; // 0 -> 1 across the hero section
+      var scale = 1 + progress * 0.22;
+      heroImg.style.transform = 'scale(' + scale.toFixed(3) + ')';
+      ticking = false;
+    }
+
+    window.addEventListener('scroll', function () {
+      if (!ticking) {
+        window.requestAnimationFrame(update);
+        ticking = true;
+      }
+    }, { passive: true });
+
+    update();
+  })();
+</script>
+</body>
+</html>

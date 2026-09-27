@@ -1,0 +1,209 @@
+/* Work details page — extends styles.css (shared header/footer/typography) */
+
+.wd-hero { padding: 24px 0 0; }
+.wd-hero-frame {
+  position: relative;
+  border-radius: 18px;
+  overflow: hidden;
+  aspect-ratio: 16 / 9;
+}
+.wd-hero-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.wd-hero-dots {
+  position: absolute;
+  left: 24px;
+  bottom: 22px;
+  display: flex;
+  gap: 8px;
+}
+.wd-hero-dots span {
+  width: 26px;
+  height: 3px;
+  border-radius: 2px;
+  background: rgba(255,255,255,0.4);
+}
+.wd-hero-dots span.active { background: #fff; }
+.wd-hero-pill {
+  position: absolute;
+  right: 20px;
+  bottom: 18px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(20,20,20,0.55);
+  backdrop-filter: blur(6px);
+  color: #fff;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  padding: 9px 16px;
+  border-radius: 999px;
+}
+.wd-hero-pill svg { width: 12px; height: 12px; }
+
+.wd-intro { padding: 64px 0 96px; }
+.wd-intro-project { font-family: 'Merriweather', serif; font-size: 26px; letter-spacing: -0.03em; margin: 0 0 10px; }
+.wd-intro-meta { font-size: 13px; line-height: 1.55; color: #8c8c8c; max-width: 200px; }
+.wd-lead {
+  font-family: 'Merriweather', serif;
+  font-weight: 300;
+  font-size: clamp(21px, 2vw, 26px);
+  line-height: 1.5;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+  margin: 0;
+}
+.wd-lead .muted { color: #b7b7b7; }
+
+.wd-features { background: var(--dark-bg); color: #f2f2f0; padding: 84px 0; }
+.wd-features-top { margin-bottom: 46px; }
+.wd-features-top h2 { color: #fff; max-width: 320px; }
+.wd-features-top p { color: #a9a8a4; font-size: 14px; line-height: 1.6; margin: 0; max-width: 320px; }
+.wd-features-grid { --bs-gutter-x: 40px; --bs-gutter-y: 40px; }
+.wd-feature h4 {
+  font-family: 'Merriweather', serif;
+  font-weight: 500;
+  font-size: 15px;
+  letter-spacing: -0.02em;
+  color: #fff;
+  margin: 0 0 10px;
+}
+.wd-feature p { font-size: 13.5px; line-height: 1.6; color: #a9a8a4; margin: 0; max-width: 260px; }
+
+.wd-impact { padding: 90px 0 30px; }
+.wd-impact h2 { margin-bottom: 34px; }
+.wd-impact-scroller {
+  display: flex;
+  gap: 18px;
+  overflow-x: auto;
+  padding-bottom: 12px;
+  margin: 0 -1px;
+}
+.wd-impact-card {
+  flex: 0 0 260px;
+  width: 260px;
+  border: 1px solid #ececec;
+  border-radius: 14px;
+  padding: 34px 26px;
+  min-height: 220px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.wd-impact-number { font-family: 'Merriweather', serif; font-size: 44px; letter-spacing: -0.03em; }
+.wd-impact-icon svg { width: 34px; height: 34px; }
+.wd-impact-text h4 { font-size: 15px; letter-spacing: -0.01em; margin: 18px 0 8px; font-weight: 600; }
+.wd-impact-text p { font-size: 13px; line-height: 1.6; color: #7c7c7c; margin: 0; }
+
+.wd-challenges { padding: 60px 0 100px; }
+.wd-challenges-box { border: 1px solid #ececec; border-radius: 18px; padding: 56px 48px; }
+.wd-challenges-top { margin-bottom: 44px; }
+.wd-challenges-top p { color: #7c7c7c; font-size: 14px; line-height: 1.6; margin: 0; max-width: 320px; }
+.wd-challenges-grid { --bs-gutter-x: 40px; --bs-gutter-y: 32px; }
+.wd-challenge h4 { font-size: 15px; letter-spacing: -0.01em; margin: 0 0 8px; font-weight: 600; }
+.wd-challenge p { font-size: 13.5px; line-height: 1.6; color: #7c7c7c; margin: 0; max-width: 260px; }
+
+/* Project gallery — mixed image/quote narrative below the challenges block */
+.wd-gallery { padding: 10px 0 100px; }
+.wd-gallery-block { margin-bottom: 70px; }
+.wd-gallery-block:last-child { margin-bottom: 0; }
+
+.wd-split { display: flex; gap: 4px; }
+.wd-split figure { flex: 1 1 50%; margin: 0; aspect-ratio: 1 / 1.05; overflow: hidden; }
+.wd-split img { width: 100%; height: 100%; object-fit: cover; }
+
+.wd-swatch { display: flex; gap: 4px; }
+.wd-swatch-color, .wd-swatch-type {
+  flex: 1 1 50%;
+  aspect-ratio: 1 / 1.05;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.wd-swatch-type { background: #f7f1ea; }
+.wd-swatch-type span {
+  font-family: 'Merriweather', serif;
+  font-weight: 700;
+  font-size: clamp(30px, 4vw, 46px);
+  letter-spacing: -0.01em;
+  color: var(--ink);
+}
+
+.wd-quote-row { display: flex; }
+.wd-quote {
+  margin: 0 0 0 auto;
+  max-width: 380px;
+  font-family: 'Merriweather', serif;
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 1.55;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+}
+
+.wd-wordmark {
+  aspect-ratio: 21 / 9;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+}
+.wd-wordmark svg { width: 46px; height: 46px; opacity: .9; }
+.wd-wordmark span {
+  font-family: 'Merriweather', serif;
+  font-weight: 700;
+  font-size: clamp(38px, 6vw, 64px);
+  letter-spacing: -0.01em;
+  color: #fff;
+  text-transform: lowercase;
+}
+
+.wd-portrait { aspect-ratio: 4 / 5; overflow: hidden; }
+.wd-portrait img { width: 100%; height: 100%; object-fit: cover; }
+
+.wd-next-project {
+  padding: 40px 0 20px;
+  text-align: right;
+}
+.wd-next-project a { text-decoration: none; }
+.wd-next-project .wd-next-label {
+  display: block;
+  font-size: 13px;
+  color: #8c8c8c;
+  margin-bottom: 8px;
+}
+.wd-next-project .wd-next-name {
+  font-family: 'Merriweather', serif;
+  font-size: 26px;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+}
+.wd-next-project a:hover .wd-next-name { opacity: .7; }
+
+@media (max-width: 767.98px) {
+  .wd-split { flex-direction: column; }
+  .wd-split figure { aspect-ratio: 4 / 3; }
+  .wd-swatch { flex-direction: column; }
+  .wd-swatch-color, .wd-swatch-type { aspect-ratio: 3 / 2; }
+  .wd-quote { max-width: none; }
+  .wd-gallery-block { margin-bottom: 46px; }
+}
+
+@media (max-width: 991.98px) {
+  .wd-intro { padding: 46px 0 70px; }
+  .wd-intro-project { margin-bottom: 6px; }
+  .wd-intro-meta { max-width: none; margin-bottom: 26px; }
+  .wd-features { padding: 56px 0; }
+  .wd-features-top { margin-bottom: 32px; }
+  .wd-challenges-box { padding: 40px 26px; }
+}
+
+@media (max-width: 767.98px) {
+  .wd-hero-frame { aspect-ratio: 4 / 3; border-radius: 14px; }
+  .wd-lead { font-size: 19px; }
+  .wd-impact-card { flex-basis: 220px; width: 220px; padding: 26px 22px; min-height: 190px; }
+}
