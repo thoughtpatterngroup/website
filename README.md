@@ -1,6 +1,5 @@
-# Designmodo Startup — Bootstrap Recreation
 
-A responsive Bootstrap 5.1.2 recreation of the supplied Designmodo Startup reference page.
+A responsive Bootstrap 5.1.2 recreation from reference page.
 
 ## Target
 - Desktop reference: 1440px viewport
