@@ -1,25 +1,27 @@
 media:
   input: assets
-  output: assets
+  output: /assets
 
 content:
   - name: "landing-page"
     label: "Landing Page"
-    type: file
-    path: "index.html"
-    format: raw
+    path: "content/landing.json"
+    file: true
     fields:
-      - name: "body"
-        label: "Content"
-        type: "rich-text"
+      - { name: "heroTitle", label: "Hero Title", type: "string" }
+      - { name: "heroSubtitle", label: "Hero Subtitle", type: "text" }
 
-  - name: "work-detail"
-    label: "Work Detail"
-    type: file
-    path: "work-details.html"
-    format: raw
+  - name: "work-projects"
+    label: "Work Projects"
+    path: "content/projects"
+    type: "collection"
+    format: "json"
     fields:
-      - name: "body"
-        label: "Content"
-        type: "rich-text"
-        
+      - { name: "title", label: "Project Title", type: "string" }
+      - { name: "meta", label: "Meta Description", type: "string" }
+      - { name: "hero", label: "Hero Image", type: "image" }
+      - { name: "lead", label: "Lead Paragraph", type: "text" }
+      - { name: "accent", label: "Accent Color", type: "color" }
+      - { name: "gradient", label: "Gradient CSS", type: "string" }
+      - { name: "quote1", label: "Quote 1", type: "string" }
+      - { name: "quote2", label: "Quote 2", type: "string" }
