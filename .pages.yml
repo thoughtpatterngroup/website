@@ -7,6 +7,7 @@ content:
     label: "Landing Page"
     path: "content/landing.json"
     file: true
+    format: "json"
     fields:
       - name: "hero"
         label: "Hero Section"
