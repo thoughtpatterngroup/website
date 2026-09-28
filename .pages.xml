@@ -1,0 +1,20 @@
+media:
+  input: assets
+  output: assets
+
+content:
+  - label: "Landing Page"
+    type: file
+    path: "index.html"
+    fields:
+      - label: "Content"
+        name: "body"
+        widget: "rich-text"
+
+  - label: "Work Detail"
+    type: file
+    path: "work-details.html"
+    fields:
+      - label: "Content"
+        name: "body"
+        widget: "rich-text"
