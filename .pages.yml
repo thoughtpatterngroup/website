@@ -1,7 +1,7 @@
 media:
   input: assets
   output: /assets
-
+  
 content:
   - name: "landing-page"
     label: "Landing Page"
