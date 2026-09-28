@@ -12,8 +12,8 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;500;600;700;800&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="styles.css">
-  <link rel="stylesheet" href="work-details.css">
+  <link rel="stylesheet" href="/styles.css">
+  <link rel="stylesheet" href="/work-details.css">
 </head>
 <body>
 
@@ -379,7 +379,6 @@
     document.getElementById('wdLead').textContent = data.lead;
     document.getElementById('wdHeroImage').src = data.hero;
     document.getElementById('wdHeroImage').alt = data.title;
-    document.getElementById('wdHeroPill').firstChild.textContent = data.pill + ' ';
 
     // Gallery — reuses the project's own photography across a few crops
     ['wdGalleryImg1', 'wdGalleryImg2', 'wdGalleryImg3', 'wdGalleryImg4', 'wdGalleryImg5'].forEach(function (id) {
