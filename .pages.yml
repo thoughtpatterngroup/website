@@ -9,7 +9,7 @@ content:
     fields:
       - label: "Content"
         name: "body"
-        widget: "rich-text"
+        type: "rich-text"
 
   - label: "Work Detail"
     type: file
@@ -17,4 +17,4 @@ content:
     fields:
       - label: "Content"
         name: "body"
-        widget: "rich-text"
+        type: "rich-text"
