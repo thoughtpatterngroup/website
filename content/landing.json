@@ -1,8 +1,8 @@
 {
   "hero": {
     "title": "Designing meaningful experiences and solutions for complex real-world challenges.",
-    "subtitle": "Everything has a meaning and every smaller thing matters. We help you to nudge outcomes for consumers!",
-    "image": "assets/feature6.jpeg"
+    "subtitle": "Everything has a meaning and every smaller thing matters. We help you to nudge outcomes for consumers",
+    "image": "/assets/feature6.jpeg"
   },
   "showcase": {
     "title": "Explore incredible ideas built at our agency",
@@ -15,29 +15,29 @@
       {
         "title": "Percuro",
         "description": "Brand identity built around a modular pattern system.",
-        "image": "assets/show3.jpg"
+        "image": "/assets/show3.jpg"
       },
       {
         "title": "Goloco",
         "description": "Wayfinding and signage for a landmark redevelopment.",
-        "image": "assets/show4.jpg"
+        "image": "/assets/show4.jpg"
       },
       {
         "title": "Learnerscape",
         "description": "Data-driven infographic identity for an education platform.",
-        "image": "assets/show5.jpg"
+        "image": "/assets/show5.jpg"
       },
       {
         "title": "Arthaye",
         "description": "Campaign visual system for a financial services brand.",
-        "image": "assets/show8.jpg"
+        "image": "/assets/show8.jpg"
       }
     ]
   },
   "features": {
     "title": "Our thoughts align towards detailing and process driven approach",
     "subtitle": "Combining complementary skills and relentless drive to turn bold ideas into reality.",
-    "image": "assets/feature18.png",
+    "image": "/assets/feature18.png",
     "columns": [
       {
         "title": "Build Quick",
