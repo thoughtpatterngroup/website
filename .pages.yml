@@ -4,9 +4,18 @@ media:
 
 content:
   - label: "Landing Page"
-    type: file
+    type: page
     path: "index.html"
     fields:
       - label: "Content"
         name: "body"
         type: "rich-text"
+
+  - label: "Work Detail"
+    type: page
+    path: "work-details.html"
+    fields:
+      - label: "Content"
+        name: "body"
+        type: "rich-text"
+        
