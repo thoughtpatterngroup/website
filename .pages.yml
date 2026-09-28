@@ -32,8 +32,7 @@ content:
           - { name: "list", label: "Comma Separated Skills", type: "text" }
           - name: "cards"
             label: "Capability Cards"
-            type: "object"
-            list: true
+            type: "list"
             fields:
               - { name: "title", label: "Card Title", type: "string" }
               - { name: "description", label: "Card Description", type: "text" }
@@ -48,8 +47,7 @@ content:
           - { name: "image", label: "Side Illustration", type: "image" }
           - name: "columns"
             label: "Feature Columns"
-            type: "object"
-            list: true
+            type: "list"
             fields:
               - { name: "title", label: "Column Title", type: "string" }
               - { name: "text", label: "Column Text", type: "text" }
@@ -73,10 +71,10 @@ content:
     type: "collection"
     path: "content/projects"
     format: "json"
-    filename: "{primary}.json"
+    filename: "{slug}.json"
     view:
-      primary: "slug"
-      fields: ["title", "slug", "meta"]
+      primary: "title"
+      summary: "slug"
     fields:
       - { name: "slug", label: "URL Slug", type: "string" }
       - { name: "title", label: "Project Title", type: "string" }
@@ -95,16 +93,14 @@ content:
 
       - name: "programFeatures"
         label: "Program Features"
-        type: "object"
-        list: true
+        type: "list"
         fields:
           - { name: "title", label: "Feature Title", type: "string" }
           - { name: "description", label: "Feature Description", type: "text" }
 
       - name: "impact"
         label: "Impact Stats"
-        type: "object"
-        list: true
+        type: "list"
         fields:
           - { name: "metric", label: "Metric", type: "string" }
           - { name: "title", label: "Stat Title", type: "string" }
@@ -112,8 +108,7 @@ content:
 
       - name: "challenges"
         label: "Common Challenges"
-        type: "object"
-        list: true
+        type: "list"
         fields:
           - { name: "title", label: "Challenge Title", type: "string" }
           - { name: "description", label: "Challenge Description", type: "text" }
