@@ -70,8 +70,11 @@ content:
   - name: "work-projects"
     label: "Work Projects"
     path: "content/projects"
+    folder: "content/projects"
     type: "collection"
     format: "json"
+    view:
+      fields: ["title", "slug", "meta"]
     fields:
       - { name: "slug", label: "URL Slug", type: "string" }
       - { name: "title", label: "Project Title", type: "string" }
