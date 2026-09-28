@@ -5,9 +5,8 @@ media:
 content:
   - name: "landing-page"
     label: "Landing Page"
-    path: "content/landing.json"
     type: "file"
-    file: "content/landing.json"
+    path: "content/landing.json"
     format: "json"
     fields:
       - name: "hero"
@@ -33,7 +32,8 @@ content:
           - { name: "list", label: "Comma Separated Skills", type: "text" }
           - name: "cards"
             label: "Capability Cards"
-            type: "list"
+            type: "object"
+            list: true
             fields:
               - { name: "title", label: "Card Title", type: "string" }
               - { name: "description", label: "Card Description", type: "text" }
@@ -48,7 +48,8 @@ content:
           - { name: "image", label: "Side Illustration", type: "image" }
           - name: "columns"
             label: "Feature Columns"
-            type: "list"
+            type: "object"
+            list: true
             fields:
               - { name: "title", label: "Column Title", type: "string" }
               - { name: "text", label: "Column Text", type: "text" }
@@ -67,13 +68,14 @@ content:
               - { name: "facebook", label: "Facebook URL", type: "string" }
               - { name: "instagram", label: "Instagram URL", type: "string" }
 
- - name: "work-projects"
+  - name: "work-projects"
     label: "Work Projects"
     type: "collection"
     path: "content/projects"
     format: "json"
-    extension: "json"
+    filename: "{primary}.json"
     view:
+      primary: "slug"
       fields: ["title", "slug", "meta"]
     fields:
       - { name: "slug", label: "URL Slug", type: "string" }
@@ -93,14 +95,16 @@ content:
 
       - name: "programFeatures"
         label: "Program Features"
-        type: "list"
+        type: "object"
+        list: true
         fields:
           - { name: "title", label: "Feature Title", type: "string" }
           - { name: "description", label: "Feature Description", type: "text" }
 
       - name: "impact"
         label: "Impact Stats"
-        type: "list"
+        type: "object"
+        list: true
         fields:
           - { name: "metric", label: "Metric", type: "string" }
           - { name: "title", label: "Stat Title", type: "string" }
@@ -108,7 +112,8 @@ content:
 
       - name: "challenges"
         label: "Common Challenges"
-        type: "list"
+        type: "object"
+        list: true
         fields:
           - { name: "title", label: "Challenge Title", type: "string" }
           - { name: "description", label: "Challenge Description", type: "text" }
