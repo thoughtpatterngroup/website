@@ -6,7 +6,8 @@ content:
   - name: "landing-page"
     label: "Landing Page"
     path: "content/landing.json"
-    file: true
+    type: "file"
+    file: "content/landing.json"
     format: "json"
     fields:
       - name: "hero"
@@ -72,7 +73,7 @@ content:
     type: "collection"
     format: "json"
     fields:
-      - { name: "slug", label: "URL Slug (e.g., little-planet)", type: "string" }
+      - { name: "slug", label: "URL Slug", type: "string" }
       - { name: "title", label: "Project Title", type: "string" }
       - { name: "meta", label: "Meta Description", type: "string" }
       - { name: "hero", label: "Hero Image", type: "image" }
@@ -98,7 +99,7 @@ content:
         label: "Impact Stats"
         type: "list"
         fields:
-          - { name: "metric", label: "Metric (e.g., 3x or 40%)", type: "string" }
+          - { name: "metric", label: "Metric", type: "string" }
           - { name: "title", label: "Stat Title", type: "string" }
           - { name: "description", label: "Stat Description", type: "text" }
 
