@@ -69,10 +69,10 @@ content:
 
   - name: "work-projects"
     label: "Work Projects"
+    type: "folder"
     path: "content/projects"
-    folder: "content/projects"
-    type: "collection"
     format: "json"
+    extension: "json"
     view:
       fields: ["title", "slug", "meta"]
     fields:
