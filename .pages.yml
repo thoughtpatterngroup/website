@@ -1,0 +1,12 @@
+media:
+  input: assets
+  output: assets
+
+content:
+  - label: "Landing Page"
+    type: file
+    path: "index.html"
+    fields:
+      - label: "Content"
+        name: "body"
+        type: "rich-text"
