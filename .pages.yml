@@ -8,8 +8,62 @@ content:
     path: "content/landing.json"
     file: true
     fields:
-      - { name: "heroTitle", label: "Hero Title", type: "string" }
-      - { name: "heroSubtitle", label: "Hero Subtitle", type: "text" }
+      - name: "hero"
+        label: "Hero Section"
+        type: "object"
+        fields:
+          - { name: "title", label: "Title", type: "string" }
+          - { name: "subtitle", label: "Subtitle", type: "text" }
+          - { name: "image", label: "Background Image", type: "image" }
+
+      - name: "showcase"
+        label: "Showcase Section"
+        type: "object"
+        fields:
+          - { name: "title", label: "Title", type: "string" }
+          - { name: "subtitle", label: "Subtitle", type: "text" }
+
+      - name: "capabilities"
+        label: "Capabilities Section"
+        type: "object"
+        fields:
+          - { name: "title", label: "Title", type: "string" }
+          - { name: "list", label: "Comma Separated Skills", type: "text" }
+          - name: "cards"
+            label: "Capability Cards"
+            type: "list"
+            fields:
+              - { name: "title", label: "Card Title", type: "string" }
+              - { name: "description", label: "Card Description", type: "text" }
+              - { name: "image", label: "Card Image", type: "image" }
+
+      - name: "features"
+        label: "Features Section"
+        type: "object"
+        fields:
+          - { name: "title", label: "Title", type: "string" }
+          - { name: "subtitle", label: "Subtitle", type: "text" }
+          - { name: "image", label: "Side Illustration", type: "image" }
+          - name: "columns"
+            label: "Feature Columns"
+            type: "list"
+            fields:
+              - { name: "title", label: "Column Title", type: "string" }
+              - { name: "text", label: "Column Text", type: "text" }
+
+      - name: "footer"
+        label: "Footer Section"
+        type: "object"
+        fields:
+          - { name: "copyright", label: "Copyright Text", type: "string" }
+          - { name: "email", label: "Contact Email", type: "string" }
+          - name: "social"
+            label: "Social Links"
+            type: "object"
+            fields:
+              - { name: "twitter", label: "Twitter URL", type: "string" }
+              - { name: "facebook", label: "Facebook URL", type: "string" }
+              - { name: "instagram", label: "Instagram URL", type: "string" }
 
   - name: "work-projects"
     label: "Work Projects"
@@ -17,11 +71,39 @@ content:
     type: "collection"
     format: "json"
     fields:
+      - { name: "slug", label: "URL Slug (e.g., little-planet)", type: "string" }
       - { name: "title", label: "Project Title", type: "string" }
       - { name: "meta", label: "Meta Description", type: "string" }
       - { name: "hero", label: "Hero Image", type: "image" }
       - { name: "lead", label: "Lead Paragraph", type: "text" }
-      - { name: "accent", label: "Accent Color", type: "color" }
-      - { name: "gradient", label: "Gradient CSS", type: "string" }
-      - { name: "quote1", label: "Quote 1", type: "string" }
-      - { name: "quote2", label: "Quote 2", type: "string" }
+      - { name: "accent", label: "Accent Color (Hex)", type: "string" }
+      - { name: "gradient", label: "Gradient CSS Code", type: "string" }
+
+      - name: "quotes"
+        label: "Gallery Quotes"
+        type: "object"
+        fields:
+          - { name: "quote1", label: "Quote 1", type: "text" }
+          - { name: "quote2", label: "Quote 2", type: "text" }
+
+      - name: "programFeatures"
+        label: "Program Features"
+        type: "list"
+        fields:
+          - { name: "title", label: "Feature Title", type: "string" }
+          - { name: "description", label: "Feature Description", type: "text" }
+
+      - name: "impact"
+        label: "Impact Stats"
+        type: "list"
+        fields:
+          - { name: "metric", label: "Metric (e.g., 3x or 40%)", type: "string" }
+          - { name: "title", label: "Stat Title", type: "string" }
+          - { name: "description", label: "Stat Description", type: "text" }
+
+      - name: "challenges"
+        label: "Common Challenges"
+        type: "list"
+        fields:
+          - { name: "title", label: "Challenge Title", type: "string" }
+          - { name: "description", label: "Challenge Description", type: "text" }
