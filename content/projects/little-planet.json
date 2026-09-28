@@ -1,0 +1,88 @@
+{
+  "slug": "little-planet",
+  "title": "Little Planet",
+  "meta": "Branding, Illustration, Design Strategy and Information Design",
+  "hero": "assets/show1.jpg",
+  "categories": ["branding", "illustrations", "design-strategy", "information-design"],
+  "lead": "If your brand is slowly becoming irrelevant, it's costing you 1-3% of market share every year. Our Brand Refresh Program stops the fade. We identify what still resonates, eliminate what doesn't, and evolve your brand to reclaim distinction and desirability.",
+  "accent": "#2f6fed",
+  "gradient": "linear-gradient(160deg, #6fa0ff 0%, #16224f 100%)",
+  "quotes": {
+    "quote1": "The pattern system was built to feel handmade at any scale, from a hang-tag to a shopfront.",
+    "quote2": "Consistency became a feature, not a constraint — every touchpoint now reads as unmistakably Little Planet."
+  },
+  "programFeatures": [
+    {
+      "title": "Brand Positioning & Messaging Guidelines",
+      "description": "Own a distinctive, unassailable place in the consumer's mind."
+    },
+    {
+      "title": "Brand Narrative",
+      "description": "Inspire irrational passion for your brand."
+    },
+    {
+      "title": "Messaging Strategy",
+      "description": "Attract new audiences, while retaining your core audience."
+    },
+    {
+      "title": "Brand Identity Design",
+      "description": "Create a memorable identity that elevates brand perception."
+    },
+    {
+      "title": "Brand Identity Systemization",
+      "description": "Scale consistently and flexibly across every touchpoint."
+    },
+    {
+      "title": "Product-Brand Integration",
+      "description": "Seamlessly unify your product experience with your brand."
+    }
+  ],
+  "impact": [
+    {
+      "metric": "3x",
+      "title": "Rapid Top-Line Growth",
+      "description": "Aligning the business with its expression, the refreshed brand enjoyed 3x growth in 18 months."
+    },
+    {
+      "metric": "2.5x",
+      "title": "Improvement as \"Employer of Choice\"",
+      "description": "The refreshed brand drove a 2.5x lift in \"employer of choice\" perception — attracting more and better talent."
+    },
+    {
+      "metric": "Up",
+      "title": "Increased Brand Distinction",
+      "description": "Refreshed, the brand was more memorable, standing out in a sea of sameness and staying top of mind."
+    },
+    {
+      "metric": "40%",
+      "title": "Faster Time-to-Market",
+      "description": "A systemized identity cut design and production cycles nearly in half."
+    }
+  ],
+  "challenges": [
+    {
+      "title": "Lack of Distinctiveness",
+      "description": "Your brand is missing out on the marketing efficiency that distinctiveness delivers."
+    },
+    {
+      "title": "Unclear Value Proposition",
+      "description": "You can't articulate clearly what differentiates you from competitors."
+    },
+    {
+      "title": "Bland Brand Narrative",
+      "description": "Your brand story leaves your customers indifferent and competitors unchallenged."
+    },
+    {
+      "title": "Product Line Evolution",
+      "description": "You've evolved the product offerings and the brand needs to be updated to support it."
+    },
+    {
+      "title": "Product-Brand Disconnect",
+      "description": "There's no coherence between how your brand appears in marketing and product."
+    },
+    {
+      "title": "Underinvestment",
+      "description": "Having never been prioritized, your brand is underdeveloped and impedes your strategy."
+    }
+  ]
+}
