@@ -3,19 +3,23 @@ media:
   output: assets
 
 content:
-  - label: "Landing Page"
-    type: page
+  - name: "landing-page"
+    label: "Landing Page"
+    type: file
     path: "index.html"
+    format: raw
     fields:
-      - label: "Content"
-        name: "body"
+      - name: "body"
+        label: "Content"
         type: "rich-text"
 
-  - label: "Work Detail"
-    type: page
+  - name: "work-detail"
+    label: "Work Detail"
+    type: file
     path: "work-details.html"
+    format: raw
     fields:
-      - label: "Content"
-        name: "body"
+      - name: "body"
+        label: "Content"
         type: "rich-text"
         
