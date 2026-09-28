@@ -67,9 +67,9 @@ content:
               - { name: "facebook", label: "Facebook URL", type: "string" }
               - { name: "instagram", label: "Instagram URL", type: "string" }
 
-  - name: "work-projects"
+ - name: "work-projects"
     label: "Work Projects"
-    type: "folder"
+    type: "collection"
     path: "content/projects"
     format: "json"
     extension: "json"
