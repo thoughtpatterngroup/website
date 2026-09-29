@@ -207,41 +207,23 @@
     </div>
   </section>
 
-  <!-- Project gallery -->
-  <section class="wd-gallery">
-    <div class="container site-container">
+<!-- Project gallery -->
+<section class="wd-gallery">
+  <div class="container site-container">
 
-      <div class="wd-gallery-block wd-split">
-        <figure><img id="wdGalleryImg1" src="assets/show1.jpg" alt=""></figure>
-        <figure><img id="wdGalleryImg2" src="assets/show1.jpg" alt=""></figure>
-      </div>
-
-      <div class="wd-gallery-block wd-quote-row">
-        <p class="wd-quote" id="wdQuote1"></p>
-      </div>
-
-      <div class="wd-gallery-block wd-split">
-        <figure><img id="wdGalleryImg3" src="assets/show1.jpg" alt=""></figure>
-        <figure><img id="wdGalleryImg4" src="assets/show1.jpg" alt=""></figure>
-      </div>
-
-      <div class="wd-gallery-block wd-portrait">
-        <img id="wdGalleryImg5" src="assets/show1.jpg" alt="">
-      </div>
-
-      <div class="wd-gallery-block wd-quote-row">
-        <p class="wd-quote" id="wdQuote2"></p>
-      </div>
-
-      <div class="wd-next-project">
-        <a id="wdNextLink" href="work-details.html?project=trident-tech-lab">
-          <span class="wd-next-label">Next Project</span>
-          <span class="wd-next-name" id="wdNextName">Trident Tech Lab</span>
-        </a>
-      </div>
-
+    <div id="wdGallery">
+      <!-- Gallery images are inserted here by Pages CMS loader -->
     </div>
-  </section>
+
+    <div class="wd-next-project">
+      <a id="wdNextLink" href="work-details.html?project=trident-tech-lab">
+        <span class="wd-next-label">Next Project</span>
+        <span class="wd-next-name" id="wdNextName">Trident Tech Lab</span>
+      </a>
+    </div>
+
+  </div>
+</section>
 </main>
 
 <footer class="site-footer">
@@ -549,108 +531,102 @@
 
 
   /*
-   * ------------------------------------------------------------
-   * Render Gallery
-   * ------------------------------------------------------------
-   *
-   * Your Pages CMS structure is:
-   *
-   * gallery:
-   *   grid1:
-   *     image1
-   *     image2
-   *
-   *   grid2:
-   *     image1
-   *     image2
-   *
-   *   horizontal
-   *
-   * ------------------------------------------------------------
+ * ------------------------------------------------------------
+ * Render Project Gallery
+ * ------------------------------------------------------------
+ *
+ * Pages CMS structure:
+ *
+ * gallery:
+ *   images:
+ *     - title
+ *       image
+ *       alt
+ *
+ * There is intentionally NO default image.
+ * ------------------------------------------------------------
+ */
+
+function renderGallery(data) {
+
+  var wrap = document.getElementById('wdGallery');
+
+  if (!wrap) {
+    return;
+  }
+
+  /*
+   * Clear any existing gallery content.
    */
 
-  function renderGallery(data) {
+  wrap.innerHTML = '';
 
-    var gallery =
-      data.gallery || {};
+  /*
+   * Make sure gallery images exist.
+   */
 
+  if (
+    !data.gallery ||
+    !Array.isArray(data.gallery.images)
+  ) {
 
-    /*
-     * First 1 × 2 grid
-     */
+    console.log(
+      '[Pages CMS] No gallery images found.'
+    );
 
-    if (gallery.grid1) {
-
-      setImage(
-        'wdGalleryImg1',
-        gallery.grid1.image1,
-        data.title || 'Project image'
-      );
-
-      setImage(
-        'wdGalleryImg2',
-        gallery.grid1.image2,
-        data.title || 'Project image'
-      );
-
-    }
-
-
-    /*
-     * Second 1 × 2 grid
-     */
-
-    if (gallery.grid2) {
-
-      setImage(
-        'wdGalleryImg3',
-        gallery.grid2.image1,
-        data.title || 'Project image'
-      );
-
-      setImage(
-        'wdGalleryImg4',
-        gallery.grid2.image2,
-        data.title || 'Project image'
-      );
-
-    }
-
-
-    /*
-     * Horizontal image
-     */
-
-    if (gallery.horizontal) {
-
-      setImage(
-        'wdGalleryImg5',
-        gallery.horizontal,
-        data.title || 'Project image'
-      );
-
-    }
-
-
-    /*
-     * Quotes
-     */
-
-    if (data.quotes) {
-
-      setText(
-        'wdQuote1',
-        data.quotes.quote1 || ''
-      );
-
-      setText(
-        'wdQuote2',
-        data.quotes.quote2 || ''
-      );
-
-    }
-
+    return;
   }
+
+  /*
+   * Render each CMS image.
+   */
+
+  data.gallery.images.forEach(function (item, index) {
+
+    /*
+     * Do not create an image if CMS has no image.
+     */
+
+    if (!item || !item.image) {
+      return;
+    }
+
+    var block =
+      document.createElement('div');
+
+    block.className =
+      'wd-gallery-block wd-cms-image';
+
+    var figure =
+      document.createElement('figure');
+
+    var image =
+      document.createElement('img');
+
+    image.src =
+      assetUrl(item.image);
+
+    image.alt =
+      item.alt ||
+      item.title ||
+      data.title ||
+      'Project image';
+
+    image.loading =
+      index === 0
+        ? 'eager'
+        : 'lazy';
+
+    figure.appendChild(image);
+
+    block.appendChild(figure);
+
+    wrap.appendChild(block);
+
+  });
+
+}
+
 
 
   /*
