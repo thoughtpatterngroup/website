@@ -3,5 +3,10 @@
   "title": "Trident Tech Lab",
   "meta": "Add project disciplines in PagesCMS",
   "hero": "/assets/B84669A4-0D47-4918-AE5B-B0732E7A3745_1_102_o-1.jpeg",
-  "lead": "Add the project introduction and case-study summary in PagesCMS."
+  "lead": "Add the project introduction and case-study summary in PagesCMS.",
+  "gallery": {
+    "grid1": {
+      "image1": "/assets/B84669A4-0D47-4918-AE5B-B0732E7A3745_1_102_o-2.jpeg"
+    }
+  }
 }
