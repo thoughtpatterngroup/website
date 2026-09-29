@@ -209,7 +209,7 @@ content:
         label: "Lead Paragraph"
         type: "text"
 
-      # ----------------------------------------------------------
+            # ----------------------------------------------------------
       # PROJECT GALLERY
       # ----------------------------------------------------------
 
@@ -218,22 +218,26 @@ content:
         type: "object"
         fields:
 
-          # ------------------------------------------------------
-          # FIRST 1 × 2 IMAGE GRID
-          # ------------------------------------------------------
-
-          - name: "grid1"
-            label: "First 1 × 2 Image Grid"
+          - name: "images"
+            label: "Gallery Images"
             type: "object"
+            list:
+              collapsible:
+                collapsed: false
+                summary: "{title}"
             fields:
 
-              - name: "image1"
-                label: "Grid Image 1"
+              - name: "title"
+                label: "Image Title"
+                type: "string"
+
+              - name: "image"
+                label: "Image"
                 type: "image"
 
-              - name: "image2"
-                label: "Grid Image 2"
-                type: "image"
+              - name: "alt"
+                label: "Image Description"
+                type: "string"
 
 
           # ------------------------------------------------------
