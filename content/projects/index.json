@@ -192,9 +192,7 @@
     "title": "Myristica Ventures",
     "meta": "Add project disciplines in PagesCMS",
     "hero": "/assets/mv.jpeg",
-    "lead": "Add the project introduction and case-study summary in PagesCMS.",
-    "accent": "#2f6fed",
-    "gradient": "linear-gradient(160deg, #6fa0ff 0%, #16224f 100%)"
+    "lead": "Add the project introduction and case-study summary in PagesCMS."
   },
   {
     "slug": "percuro",
