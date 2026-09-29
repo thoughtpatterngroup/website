@@ -3,10 +3,21 @@
     "slug": "arthaay",
     "title": "Arthaay FinServe - A financial education service",
     "meta": "Build new financial service",
-    "hero": "/assets/front.jpg",
+    "hero": "/assets/SABF_PentagramPost-7.png",
     "lead": "Add the project introduction and case-study summary in PagesCMS.",
     "accent": "#2f6fed",
     "gradient": "linear-gradient(160deg, #6fa0ff 0%, #16224f 100%)",
+    "gallery": {
+      "grid1": {
+        "image1": "/assets/SABF_PentagramPost-12.png",
+        "image2": "/assets/SABF_PentagramPost-11.png"
+      },
+      "grid2": {
+        "image1": "/assets/SABF_PentagramPost-8.png",
+        "image2": "/assets/SABF_PentagramPost-9.png"
+      },
+      "horizontal": "/assets/SABF_PentagramPost-4.png"
+    },
     "quotes": {
       "quote1": "As an expression of Arthaay brand personality the typeface needed to communicate the seamless ease of digital banking with a distinctive style and appropriately align with the stature and trust SMBC has built",
       "quote2": "Focusing on subtle form alterations and a humanist stroke style that created a strong sense of forward momentum within the ductus—the calligraphic flow between letters—to communicate connection and progression"
