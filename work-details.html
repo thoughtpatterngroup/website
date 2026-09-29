@@ -636,52 +636,6 @@
 
 
     /*
-     * Accent colour
-     */
-
-    var swatch =
-      document.getElementById(
-        'wdSwatchColor'
-      );
-
-    if (swatch) {
-
-      swatch.style.background =
-        data.accent || '#2f6fed';
-
-    }
-
-
-    /*
-     * Gradient / wordmark
-     */
-
-    var wordmark =
-      document.getElementById(
-        'wdWordmark'
-      );
-
-    if (wordmark && data.gradient) {
-
-      wordmark.style.background =
-        data.gradient;
-
-    }
-
-
-    /*
-     * Wordmark text
-     */
-
-    setText(
-      'wdWordmarkText',
-      data.wordmark ||
-      data.title ||
-      'Project'
-    );
-
-
-    /*
      * Quotes
      */
 
