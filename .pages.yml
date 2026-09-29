@@ -217,6 +217,58 @@ content:
         label: "Gradient CSS Code"
         type: "string"
 
+      # ----------------------------------------------------------
+      # PROJECT GALLERY
+      # ----------------------------------------------------------
+
+      - name: "gallery"
+        label: "Project Gallery"
+        type: "object"
+        fields:
+
+          # ------------------------------------------------------
+          # FIRST 1 × 2 IMAGE GRID
+          # ------------------------------------------------------
+
+          - name: "grid1"
+            label: "First 1 × 2 Image Grid"
+            type: "object"
+            fields:
+
+              - name: "image1"
+                label: "Grid Image 1"
+                type: "image"
+
+              - name: "image2"
+                label: "Grid Image 2"
+                type: "image"
+
+
+          # ------------------------------------------------------
+          # SECOND 1 × 2 IMAGE GRID
+          # ------------------------------------------------------
+
+          - name: "grid2"
+            label: "Second 1 × 2 Image Grid"
+            type: "object"
+            fields:
+
+              - name: "image1"
+                label: "Grid Image 1"
+                type: "image"
+
+              - name: "image2"
+                label: "Grid Image 2"
+                type: "image"
+
+
+          # ------------------------------------------------------
+          # FINAL HORIZONTAL IMAGE
+          # ------------------------------------------------------
+
+          - name: "horizontal"
+            label: "Horizontal Image"
+            type: "image"
 
       # ----------------------------------------------------------
       # QUOTES
