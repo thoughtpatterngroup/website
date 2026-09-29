@@ -24,6 +24,20 @@
         "title": "Stand Out",
         "description": "The Thought Pattern was tasked with creating a brand identity for Payz that would help it achieve its ambition to become a full-service digital bank that raises the bar in a crowded financial market"
       }
+    ],
+    "challenges": [
+      {
+        "title": "Challenge Title One",
+        "description": "Nulla facilisi. Donec quis ipsum vulputate, accumsan justo at, gravida nisl. Aliquam id pulvinar nibh, non efficitur mauris. Nam ante eros, iaculis quis dui et, elementum commodo dui. Donec cursus varius felis, ac tincidunt velit maximus at. Nulla ut faucibus turpis, ut gravida nunc. "
+      },
+      {
+        "title": "Challenge Title Two",
+        "description": "Pellentesque eget justo non ligula suscipit accumsan. Mauris in efficitur nunc, non volutpat arcu. In id porta metus. Vestibulum aliquam sollicitudin est sed congue."
+      },
+      {
+        "title": "Challenge Title Three",
+        "description": "Curabitur sodales lectus in erat iaculis pharetra. Fusce laoreet turpis id turpis egestas, id gravida quam interdum. In hac habitasse platea dictumst. Nullam in viverra arcu. Sed orci tortor, sodales vitae semper a, facilisis in ex."
+      }
     ]
   },
   {
