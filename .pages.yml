@@ -209,7 +209,7 @@ content:
         label: "Lead Paragraph"
         type: "text"
 
-            # ----------------------------------------------------------
+      # ----------------------------------------------------------
       # PROJECT GALLERY
       # ----------------------------------------------------------
 
@@ -218,26 +218,22 @@ content:
         type: "object"
         fields:
 
-          - name: "images"
-            label: "Gallery Images"
+          # ------------------------------------------------------
+          # FIRST 1 × 2 IMAGE GRID
+          # ------------------------------------------------------
+
+          - name: "grid1"
+            label: "First 1 × 2 Image Grid"
             type: "object"
-            list:
-              collapsible:
-                collapsed: false
-                summary: "{title}"
             fields:
 
-              - name: "title"
-                label: "Image Title"
-                type: "string"
-
-              - name: "image"
-                label: "Image"
+              - name: "image1"
+                label: "Grid Image 1"
                 type: "image"
 
-              - name: "alt"
-                label: "Image Description"
-                type: "string"
+              - name: "image2"
+                label: "Grid Image 2"
+                type: "image"
 
 
           # ------------------------------------------------------
@@ -259,13 +255,26 @@ content:
 
 
           # ------------------------------------------------------
-          # FINAL HORIZONTAL IMAGE
+          # HORIZONTAL IMAGE
           # ------------------------------------------------------
 
           - name: "horizontal"
             label: "Horizontal Image"
             type: "image"
 
+
+          # ------------------------------------------------------
+          # ADDITIONAL GALLERY IMAGES
+          # ------------------------------------------------------
+
+          - name: "additional"
+            label: "Additional Gallery Images"
+            type: "image"
+            list:
+              collapsible:
+                collapsed: false
+                summary: "Gallery Image"
+                
       # ----------------------------------------------------------
       # QUOTES
       # ----------------------------------------------------------
