@@ -1,0 +1,29 @@
+{
+  "slug": "trident-tech-lab",
+  "title": "Trident Tech Lab",
+  "meta": "Add project disciplines in PagesCMS",
+  "categories": [
+    "usability",
+    "design-strategy"
+  ],
+  "hero": "/assets/show2.jpg",
+  "lead": "Add the project introduction and case-study summary in PagesCMS.",
+  "programTitle": "Project Details",
+  "programIntro": "Add the section introduction in PagesCMS.",
+  "impactTitle": "Impact",
+  "challengesTitle": "Challenges",
+  "challengesIntro": "Add the challenges section introduction in PagesCMS.",
+  "accent": "#2f6fed",
+  "gradient": "linear-gradient(160deg, #6fa0ff 0%, #16224f 100%)",
+  "wordmark": "Trident Tech Lab",
+  "gallery": [
+    "/assets/show2.jpg"
+  ],
+  "quotes": {
+    "quote1": "",
+    "quote2": ""
+  },
+  "programFeatures": [],
+  "impact": [],
+  "challenges": []
+}

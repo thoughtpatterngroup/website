@@ -1,0 +1,29 @@
+{
+  "slug": "small",
+  "title": "Small",
+  "meta": "Add project disciplines in PagesCMS",
+  "categories": [
+    "usability",
+    "branding"
+  ],
+  "hero": "/assets/show7.jpg",
+  "lead": "Add the project introduction and case-study summary in PagesCMS.",
+  "programTitle": "Project Details",
+  "programIntro": "Add the section introduction in PagesCMS.",
+  "impactTitle": "Impact",
+  "challengesTitle": "Challenges",
+  "challengesIntro": "Add the challenges section introduction in PagesCMS.",
+  "accent": "#2f6fed",
+  "gradient": "linear-gradient(160deg, #6fa0ff 0%, #16224f 100%)",
+  "wordmark": "Small",
+  "gallery": [
+    "/assets/show7.jpg"
+  ],
+  "quotes": {
+    "quote1": "",
+    "quote2": ""
+  },
+  "programFeatures": [],
+  "impact": [],
+  "challenges": []
+}

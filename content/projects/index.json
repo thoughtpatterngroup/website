@@ -1,0 +1,78 @@
+{
+  "projects": [
+    {
+      "slug": "arthaye",
+      "title": "Arthaye",
+      "image": "/assets/show8.jpg",
+      "categories": [
+        "branding",
+        "design-strategy"
+      ]
+    },
+    {
+      "slug": "goloco",
+      "title": "Goloco",
+      "image": "/assets/show4.jpg",
+      "categories": [
+        "usability",
+        "information-design"
+      ]
+    },
+    {
+      "slug": "learnerscape",
+      "title": "Learnerscape",
+      "image": "/assets/show5.jpg",
+      "categories": [
+        "information-design",
+        "illustrations"
+      ]
+    },
+    {
+      "slug": "little-planet",
+      "title": "Little Planet Film For Myristica",
+      "image": "/assets/show1.jpg",
+      "categories": [
+        "branding",
+        "illustrations",
+        "design-strategy",
+        "information-design"
+      ]
+    },
+    {
+      "slug": "myristica",
+      "title": "Myristica",
+      "image": "/assets/show6.jpg",
+      "categories": [
+        "illustrations",
+        "branding"
+      ]
+    },
+    {
+      "slug": "percuro",
+      "title": "Percuro",
+      "image": "/assets/show3.jpg",
+      "categories": [
+        "branding",
+        "illustrations"
+      ]
+    },
+    {
+      "slug": "small",
+      "title": "Small",
+      "image": "/assets/show7.jpg",
+      "categories": [
+        "usability",
+        "branding"
+      ]
+    },
+    {
+      "slug": "trident-tech-lab",
+      "title": "Trident Tech Lab",
+      "image": "/assets/show2.jpg",
+      "categories": [
+        "usability",
+        "design-strategy"
+      ]
+    }
+  ]
+}

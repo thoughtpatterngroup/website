@@ -92,14 +92,14 @@
     <div class="container site-container">
       <div class="row wd-features-top align-items-start">
         <div class="col-lg-4">
-          <h2>Program Features</h2>
+          <h2 id="wdProgramTitle">Program Features</h2>
         </div>
         <div class="col-lg-7 offset-lg-1">
-          <p>Discover some features of this customizable program.</p>
+          <p id="wdProgramIntro">Discover some features of this customizable program.</p>
         </div>
       </div>
 
-      <div class="row wd-features-grid">
+      <div id="wdProgramFeatures" class="row wd-features-grid">
         <div class="col-md-4 wd-feature">
           <h4>Brand Positioning &amp; Messaging Guidelines</h4>
           <p>Own a distinctive, unassailable place in the consumer's mind.</p>
@@ -131,8 +131,8 @@
   <!-- Impact -->
   <section class="wd-impact">
     <div class="container site-container">
-      <h2>Impact This Program Has Delivered</h2>
-      <div class="wd-impact-scroller">
+      <h2 id="wdImpactTitle">Impact This Program Has Delivered</h2>
+      <div id="wdImpact" class="wd-impact-scroller">
         <div class="wd-impact-card">
           <div class="wd-impact-number">3x</div>
           <div class="wd-impact-text">
@@ -173,14 +173,14 @@
       <div class="wd-challenges-box">
         <div class="row wd-challenges-top align-items-start">
           <div class="col-lg-4">
-            <h2>Common Challenges</h2>
+            <h2 id="wdChallengesTitle">Common Challenges</h2>
           </div>
           <div class="col-lg-7 offset-lg-1">
-            <p>If you're facing any of these challenges, we can customize our Brand Refresh Program to help.</p>
+            <p id="wdChallengesIntro">If you're facing any of these challenges, we can customize our Brand Refresh Program to help.</p>
           </div>
         </div>
 
-        <div class="row wd-challenges-grid">
+        <div id="wdChallenges" class="row wd-challenges-grid">
           <div class="col-md-4 wd-challenge">
             <h4>Lack of Distinctiveness</h4>
             <p>Your brand is missing out on the marketing efficiency that distinctiveness delivers.</p>
@@ -270,6 +270,127 @@
     </div>
   </div>
 </footer>
+
+
+<script>
+  (function () {
+    'use strict';
+
+    function assetUrl(value) {
+      if (!value) return '';
+      return value.charAt(0) === '/' ? '.' + value : value;
+    }
+
+    async function getJSON(path) {
+      var response = await fetch(path + '?v=' + Date.now());
+      if (!response.ok) throw new Error('Could not load ' + path + ' (' + response.status + ')');
+      return response.json();
+    }
+
+    function setText(id, value) {
+      var el = document.getElementById(id);
+      if (el && value !== undefined && value !== null) el.textContent = value;
+    }
+
+    function setImage(id, value, alt) {
+      var el = document.getElementById(id);
+      if (!el || !value) return;
+      el.src = assetUrl(value);
+      if (alt) el.alt = alt;
+    }
+
+    function renderProgramFeatures(items) {
+      var wrap = document.getElementById('wdProgramFeatures');
+      if (!wrap || !Array.isArray(items)) return;
+      wrap.innerHTML = items.map(function (item) {
+        return '<div class="col-md-4 wd-feature"><h4>' +
+          (item.title || '') + '</h4><p>' + (item.description || '') + '</p></div>';
+      }).join('');
+    }
+
+    function renderImpact(items) {
+      var wrap = document.getElementById('wdImpact');
+      if (!wrap || !Array.isArray(items)) return;
+      wrap.innerHTML = items.map(function (item) {
+        var metric = item.metric || '';
+        var metricMarkup = metric.toLowerCase() === 'up'
+          ? '<div class="wd-impact-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 19V5M6 11l6-6 6 6"/></svg></div>'
+          : '<div class="wd-impact-number">' + metric + '</div>';
+        return '<div class="wd-impact-card">' + metricMarkup +
+          '<div class="wd-impact-text"><h4>' + (item.title || '') +
+          '</h4><p>' + (item.description || '') + '</p></div></div>';
+      }).join('');
+    }
+
+    function renderChallenges(items) {
+      var wrap = document.getElementById('wdChallenges');
+      if (!wrap || !Array.isArray(items)) return;
+      wrap.innerHTML = items.map(function (item) {
+        return '<div class="col-md-4 wd-challenge"><h4>' +
+          (item.title || '') + '</h4><p>' + (item.description || '') + '</p></div>';
+      }).join('');
+    }
+
+    function renderGallery(data) {
+      var gallery = Array.isArray(data.gallery) ? data.gallery : [];
+      var fallback = data.hero || '';
+      for (var i = 0; i < 5; i++) {
+        setImage('wdGalleryImg' + (i + 1), gallery[i] || fallback, data.title || 'Project image');
+      }
+
+      var swatch = document.getElementById('wdSwatchColor');
+      if (swatch) swatch.style.background = data.accent || '#2f6fed';
+
+      var wordmark = document.getElementById('wdWordmark');
+      if (wordmark && data.gradient) wordmark.style.background = data.gradient;
+      setText('wdWordmarkText', data.wordmark || data.title || 'Project');
+      setText('wdQuote1', data.quotes && data.quotes.quote1 ? data.quotes.quote1 : '');
+      setText('wdQuote2', data.quotes && data.quotes.quote2 ? data.quotes.quote2 : '');
+    }
+
+    async function loadProject() {
+      var params = new URLSearchParams(window.location.search);
+      var slug = params.get('project') || 'little-planet';
+      // Slugs are generated by Pages CMS collection filenames.
+      if (!/^[a-z0-9-]+$/i.test(slug)) slug = 'little-planet';
+
+      try {
+        var data = await getJSON('content/projects/' + encodeURIComponent(slug) + '.json');
+
+        document.title = (data.title || 'Work') + ' — The Thought Pattern';
+        setImage('wdHeroImage', data.hero, data.title || 'Project cover');
+        setText('wdTitle', data.title);
+        setText('wdMeta', data.meta);
+        setText('wdLead', data.lead);
+        setText('wdProgramTitle', data.programTitle || 'Program Features');
+        setText('wdProgramIntro', data.programIntro || 'Discover some features of this customizable program.');
+        setText('wdImpactTitle', data.impactTitle || 'Impact This Program Has Delivered');
+        setText('wdChallengesTitle', data.challengesTitle || 'Common Challenges');
+        setText('wdChallengesIntro', data.challengesIntro || 'If you’re facing any of these challenges, we can customize our program to help.');
+
+        renderProgramFeatures(data.programFeatures);
+        renderImpact(data.impact);
+        renderChallenges(data.challenges);
+        renderGallery(data);
+
+        var manifest = await getJSON('content/projects/index.json');
+        var projects = manifest.projects || manifest;
+        var currentIndex = projects.findIndex(function (p) { return p.slug === slug; });
+        if (currentIndex !== -1 && projects.length > 1) {
+          var next = projects[(currentIndex + 1) % projects.length];
+          var nextLink = document.getElementById('wdNextLink');
+          if (nextLink) nextLink.href = 'work-details.html?project=' + encodeURIComponent(next.slug);
+          setText('wdNextName', next.title || next.slug);
+        }
+      } catch (error) {
+        console.error('Project content could not be loaded:', error);
+        // The original HTML content remains visible as a fallback.
+      }
+    }
+
+    loadProject();
+  })();
+</script>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js"></script>
 

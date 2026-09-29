@@ -83,5 +83,24 @@
       "title": "Underinvestment",
       "description": "Having never been prioritized, your brand is underdeveloped and impedes your strategy."
     }
+  ],
+  "categories": [
+    "branding",
+    "illustrations",
+    "design-strategy",
+    "information-design"
+  ],
+  "programTitle": "Program Features",
+  "programIntro": "Discover some features of this customizable program.",
+  "impactTitle": "Impact This Program Has Delivered",
+  "challengesTitle": "Common Challenges",
+  "challengesIntro": "If you're facing any of these challenges, we can customize our Brand Refresh Program to help.",
+  "wordmark": "Little Planet",
+  "gallery": [
+    "/assets/show1.jpg",
+    "/assets/show2.jpg",
+    "/assets/show3.jpg",
+    "/assets/show4.jpg",
+    "/assets/show5.jpg"
   ]
 }

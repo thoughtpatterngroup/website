@@ -64,15 +64,15 @@
     <div class="container site-container">
       <div class="row hero-copy align-items-start">
         <div class="col-lg-6">
-          <h1>Designing meaningful experiences and solutions for complex real-world challenges.</h1>
+          <h1 id="landingHeroTitle">Designing meaningful experiences and solutions for complex real-world challenges.</h1>
         </div>
         <div class="col-lg-5 offset-lg-1">
-          <p class="intro-copy">Everything has a meaning and every smaller thing matters. We help you to nudge outcomes for consumers!</p>
+          <p id="landingHeroSubtitle" class="intro-copy">Everything has a meaning and every smaller thing matters. We help you to nudge outcomes for consumers!</p>
         </div>
       </div>
 
       <div class="hero-image-wrap">
-        <img src="assets/feature6.jpeg" class="img-fluid w-100 feature-image-wrap" alt="Startup illustration">
+        <img id="landingHeroImage" src="assets/feature6.jpeg" class="img-fluid w-100 feature-image-wrap" alt="Startup illustration">
       </div>
     </div>
   </section>
@@ -82,10 +82,10 @@
     <div class="container site-container">
       <div class="row showcase-intro align-items-start">
         <div class="col-lg-6">
-          <h2>Explore incredible ideas built at our agency</h2>
+          <h2 id="landingShowcaseTitle">Explore incredible ideas built at our agency</h2>
         </div>
         <div class="col-lg-5 offset-lg-1">
-          <p class="intro-copy">Combining complementary skills and relentless drive to turn bold ideas into reality.</p>
+          <p id="featuresSubtitle" class="intro-copy">Combining complementary skills and relentless drive to turn bold ideas into reality.</p>
           <div class="filter-pills">
             <button type="button" class="filter-pill active" data-filter="all">All</button>
             <button type="button" class="filter-pill" data-filter="usability">Usability</button>
@@ -97,7 +97,7 @@
         </div>
       </div>
 
-      <div class="row g-4 showcase-grid">
+      <div id="projectsGrid" class="row g-4 showcase-grid">
         <div class="col-md-6 project-card" data-categories="branding,illustrations,design-strategy,information-design">
           <a href="work-details.html?project=little-planet" class="project-link">
             <img src="assets/show1.jpg" class="project-image feature-image-wrap" alt="Little Planet">
@@ -155,7 +155,7 @@
     <div class="container site-container">
       <div class="row capabilities-row align-items-center">
         <div class="col-lg-7 capabilities-strip-wrap">
-          <div class="capabilities-strip">
+          <div id="capabilitiesCards" class="capabilities-strip">
             <div class="capability-card">
               <img src="assets/show3.jpg" alt="Percuro">
               <h4>Percuro</h4>
@@ -179,8 +179,8 @@
           </div>
         </div>
         <div class="col-lg-5 capabilities-copy">
-          <h2>Crafting impactful brand identities, digital experiences and strategic design solutions.</h2>
-          <p class="capabilities-list">UI/UX Design, Brand Identity, Digital Experiences, Publications, Infographics, Books, Campaigns, Data-Driven Experiences, Industrial &amp; Product Design, Packaging, Service Design.</p>
+          <h2 id="capabilitiesTitle">Crafting impactful brand identities, digital experiences and strategic design solutions.</h2>
+          <p id="capabilitiesList" class="capabilities-list">UI/UX Design, Brand Identity, Digital Experiences, Publications, Infographics, Books, Campaigns, Data-Driven Experiences, Industrial &amp; Product Design, Packaging, Service Design.</p>
         </div>
       </div>
     </div>
@@ -191,19 +191,19 @@
     <div class="container site-container">
       <div class="row feature-top align-items-center">
         <div class="col-lg-6 feature-copy">
-          <h2>Our thoughts align towards detailing and process driven approach</h2>
-          <p class="intro-copy">Combining complementary skills and relentless drive to turn bold ideas into reality.</p>
+          <h2 id="featuresTitle">Our thoughts align towards detailing and process driven approach</h2>
+          <p id="featuresSubtitle" class="intro-copy">Combining complementary skills and relentless drive to turn bold ideas into reality.</p>
         </div>
         <div class="col-lg-5 offset-lg-1">
           <div class="feature-image-wrap">
-            <img src="assets/feature18.png" class="img-fluid w-100" alt="Startup feature illustration">
+            <img id="featuresImage" src="assets/feature18.png" class="img-fluid w-100" alt="Startup feature illustration">
           </div>
         </div>
       </div>
 
       <div class="feature-divider"></div>
 
-      <div id="prices" class="row feature-columns">
+      <div id="featureColumns" class="row feature-columns">
         <div class="col-sm-4">
           <h3>Build Quick</h3>
           <p>Everything you need to build your site in one place. All-in-one website builder for designers and creators. Your big idea starts here.</p>
@@ -224,18 +224,153 @@
 <footer id="contact" class="site-footer">
   <div class="container site-container">
     <div class="footer-social">
-      <a href="#" aria-label="Twitter"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M22 5.9c-.7.3-1.5.6-2.3.7.8-.5 1.5-1.3 1.8-2.3-.8.5-1.7.8-2.6 1-1.5-1.6-4-1.7-5.6-.2-1 .9-1.4 2.3-1.2 3.6-3.3-.2-6.3-1.8-8.3-4.3-.3.6-.5 1.3-.5 2 0 1.4.7 2.6 1.8 3.3-.6 0-1.2-.2-1.8-.5v.1c0 1.9 1.4 3.5 3.2 3.9-.3.1-.7.1-1 .1-.3 0-.5 0-.7-.1.5 1.6 2 2.7 3.7 2.7-1.4 1.1-3.1 1.7-4.9 1.7H2c1.7 1.1 3.8 1.8 6 1.8 7.2 0 11.2-6 11.2-11.2v-.5c.8-.6 1.4-1.3 1.9-2.1z"/></svg></a>
-      <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M15 4h-2a4 4 0 0 0-4 4v2H7v3h2v7h3v-7h2.6l.4-3H12V8a1 1 0 0 1 1-1h2z"/></svg></a>
-      <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1"/></svg></a>
+      <a id="footerTwitter" href="#" aria-label="Twitter"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M22 5.9c-.7.3-1.5.6-2.3.7.8-.5 1.5-1.3 1.8-2.3-.8.5-1.7.8-2.6 1-1.5-1.6-4-1.7-5.6-.2-1 .9-1.4 2.3-1.2 3.6-3.3-.2-6.3-1.8-8.3-4.3-.3.6-.5 1.3-.5 2 0 1.4.7 2.6 1.8 3.3-.6 0-1.2-.2-1.8-.5v.1c0 1.9 1.4 3.5 3.2 3.9-.3.1-.7.1-1 .1-.3 0-.5 0-.7-.1.5 1.6 2 2.7 3.7 2.7-1.4 1.1-3.1 1.7-4.9 1.7H2c1.7 1.1 3.8 1.8 6 1.8 7.2 0 11.2-6 11.2-11.2v-.5c.8-.6 1.4-1.3 1.9-2.1z"/></svg></a>
+      <a id="footerFacebook" href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M15 4h-2a4 4 0 0 0-4 4v2H7v3h2v7h3v-7h2.6l.4-3H12V8a1 1 0 0 1 1-1h2z"/></svg></a>
+      <a id="footerInstagram" href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1"/></svg></a>
     </div>
     <div class="footer-bottom">
-      <span>Copyright &copy; 2026 thethoughtpattern.com</span>
-      <a href="mailto:contact@thethoughtpattern.com">contact@thethoughtpattern.com</a>
+      <span id="footerCopyright">Copyright &copy; 2026 thethoughtpattern.com</span>
+      <a id="footerEmail" href="mailto:contact@thethoughtpattern.com">contact@thethoughtpattern.com</a>
     </div>
   </div>
 </footer>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+  // Pages CMS content loader. Pages CMS writes JSON to GitHub; this script
+  // makes the static HTML consume those files at runtime.
+  (function () {
+    'use strict';
+
+    function assetUrl(value) {
+      if (!value) return '';
+      // Pages CMS commonly writes "/assets/..." for public sites.
+      // "./assets/..." also works when the site is hosted at a GitHub Pages subpath.
+      return value.charAt(0) === '/' ? '.' + value : value;
+    }
+
+    async function getJSON(path) {
+      var response = await fetch(path + (path.indexOf('?') === -1 ? '?v=' + Date.now() : ''));
+      if (!response.ok) throw new Error('Could not load ' + path + ' (' + response.status + ')');
+      return response.json();
+    }
+
+    function text(el, value) {
+      if (el && value !== undefined && value !== null) el.textContent = value;
+    }
+
+    function renderProjects(projects) {
+      var grid = document.getElementById('projectsGrid');
+      if (!grid || !Array.isArray(projects)) return;
+
+      grid.innerHTML = projects.map(function (project) {
+        var categories = Array.isArray(project.categories) ? project.categories.join(',') : '';
+        var image = assetUrl(project.image || project.hero || '');
+        var slug = encodeURIComponent(project.slug || '');
+        var title = project.title || project.slug || 'Project';
+        return '<div class="col-md-6 project-card" data-categories="' + categories + '">' +
+          '<a href="work-details.html?project=' + slug + '" class="project-link">' +
+          '<img src="' + image + '" class="project-image feature-image-wrap" alt="' + title.replace(/"/g, '&quot;') + '">' +
+          '<div class="project-meta"><span>' + title + '</span><span class="project-arrow"></span></div>' +
+          '</a></div>';
+      }).join('');
+
+      initFilters();
+    }
+
+    function renderCapabilities(cards) {
+      var wrap = document.getElementById('capabilitiesCards');
+      if (!wrap || !Array.isArray(cards)) return;
+      wrap.innerHTML = cards.map(function (card) {
+        return '<div class="capability-card">' +
+          '<img src="' + assetUrl(card.image) + '" alt="' + (card.title || '') .replace(/"/g, '&quot;') + '">' +
+          '<h4>' + (card.title || '') + '</h4>' +
+          '<p>' + (card.description || '') + '</p>' +
+          '</div>';
+      }).join('');
+    }
+
+    function renderFeatures(columns) {
+      var wrap = document.getElementById('featureColumns');
+      if (!wrap || !Array.isArray(columns)) return;
+      wrap.innerHTML = columns.map(function (column) {
+        return '<div class="col-sm-4"><h3>' + (column.title || '') + '</h3><p>' + (column.text || '') + '</p></div>';
+      }).join('');
+    }
+
+    function initFilters() {
+      var pills = document.querySelectorAll('.filter-pill');
+      var cards = document.querySelectorAll('.project-card');
+      pills.forEach(function (pill) {
+        pill.onclick = function () {
+          pills.forEach(function (p) { p.classList.remove('active'); });
+          pill.classList.add('active');
+          var filter = pill.getAttribute('data-filter');
+          cards.forEach(function (card) {
+            var cats = (card.getAttribute('data-categories') || '').split(',');
+            card.classList.toggle('is-hidden', filter !== 'all' && cats.indexOf(filter) === -1);
+          });
+        };
+      });
+    }
+
+    async function loadLanding() {
+      try {
+        var data = await getJSON('content/landing.json');
+        if (data.hero) {
+          text(document.getElementById('landingHeroTitle'), data.hero.title);
+          text(document.getElementById('landingHeroSubtitle'), data.hero.subtitle);
+          var heroImage = document.getElementById('landingHeroImage');
+          if (heroImage && data.hero.image) heroImage.src = assetUrl(data.hero.image);
+        }
+        if (data.showcase) {
+          text(document.getElementById('landingShowcaseTitle'), data.showcase.title);
+          text(document.getElementById('landingShowcaseSubtitle'), data.showcase.subtitle);
+        }
+        if (data.capabilities) {
+          text(document.getElementById('capabilitiesTitle'), data.capabilities.title);
+          text(document.getElementById('capabilitiesList'), data.capabilities.list);
+          renderCapabilities(data.capabilities.cards);
+        }
+        if (data.features) {
+          text(document.getElementById('featuresTitle'), data.features.title);
+          text(document.getElementById('featuresSubtitle'), data.features.subtitle);
+          var featureImage = document.getElementById('featuresImage');
+          if (featureImage && data.features.image) featureImage.src = assetUrl(data.features.image);
+          renderFeatures(data.features.columns);
+        }
+        if (data.footer) {
+          text(document.getElementById('footerCopyright'), data.footer.copyright);
+          var email = document.getElementById('footerEmail');
+          if (email && data.footer.email) {
+            email.textContent = data.footer.email;
+            email.href = 'mailto:' + data.footer.email;
+          }
+          ['twitter', 'facebook', 'instagram'].forEach(function (network) {
+            var link = document.getElementById('footer' + network.charAt(0).toUpperCase() + network.slice(1));
+            if (link && data.footer.social && data.footer.social[network]) link.href = data.footer.social[network];
+          });
+        }
+      } catch (error) {
+        console.error('Landing content could not be loaded:', error);
+      }
+
+      try {
+        var manifest = await getJSON('content/projects/index.json');
+        renderProjects(manifest.projects || manifest);
+      } catch (error) {
+        // The original HTML cards remain as a graceful fallback.
+        console.error('Project manifest could not be loaded:', error);
+        initFilters();
+      }
+    }
+
+    initFilters();
+    loadLanding();
+  })();
+</script>
+
 <script>
   // Work section filtering
   (function () {
