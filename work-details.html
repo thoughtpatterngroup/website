@@ -332,21 +332,118 @@
     }
 
     function renderGallery(data) {
-      var gallery = Array.isArray(data.gallery) ? data.gallery : [];
-      var fallback = data.hero || '';
-      for (var i = 0; i < 5; i++) {
-        setImage('wdGalleryImg' + (i + 1), gallery[i] || fallback, data.title || 'Project image');
-      }
 
-      var swatch = document.getElementById('wdSwatchColor');
-      if (swatch) swatch.style.background = data.accent || '#2f6fed';
+  var gallery = data.gallery || {};
 
-      var wordmark = document.getElementById('wdWordmark');
-      if (wordmark && data.gradient) wordmark.style.background = data.gradient;
-      setText('wdWordmarkText', data.wordmark || data.title || 'Project');
-      setText('wdQuote1', data.quotes && data.quotes.quote1 ? data.quotes.quote1 : '');
-      setText('wdQuote2', data.quotes && data.quotes.quote2 ? data.quotes.quote2 : '');
-    }
+  /*
+   * First 1 × 2 grid
+   */
+  if (gallery.grid1) {
+
+    setImage(
+      'wdGalleryImg1',
+      gallery.grid1.image1,
+      data.title || 'Project image'
+    );
+
+    setImage(
+      'wdGalleryImg2',
+      gallery.grid1.image2,
+      data.title || 'Project image'
+    );
+
+  }
+
+
+  /*
+   * Second 1 × 2 grid
+   */
+  if (gallery.grid2) {
+
+    setImage(
+      'wdGalleryImg3',
+      gallery.grid2.image1,
+      data.title || 'Project image'
+    );
+
+    setImage(
+      'wdGalleryImg4',
+      gallery.grid2.image2,
+      data.title || 'Project image'
+    );
+
+  }
+
+
+  /*
+   * Horizontal image
+   */
+  if (gallery.horizontal) {
+
+    setImage(
+      'wdGalleryImg5',
+      gallery.horizontal,
+      data.title || 'Project image'
+    );
+
+  }
+
+
+  /*
+   * Accent colour
+   */
+  var swatch =
+    document.getElementById('wdSwatchColor');
+
+  if (swatch) {
+
+    swatch.style.background =
+      data.accent || '#2f6fed';
+
+  }
+
+
+  /*
+   * Wordmark
+   */
+  var wordmark =
+    document.getElementById('wdWordmark');
+
+  if (wordmark && data.gradient) {
+
+    wordmark.style.background =
+      data.gradient;
+
+  }
+
+
+  setText(
+    'wdWordmarkText',
+    data.wordmark ||
+    data.title ||
+    'Project'
+  );
+
+
+  /*
+   * Quotes
+   */
+  setText(
+    'wdQuote1',
+    data.quotes && data.quotes.quote1
+      ? data.quotes.quote1
+      : ''
+  );
+
+
+  setText(
+    'wdQuote2',
+    data.quotes && data.quotes.quote2
+      ? data.quotes.quote2
+      : ''
+  );
+
+}
 
     async function loadProject() {
       var params = new URLSearchParams(window.location.search);
