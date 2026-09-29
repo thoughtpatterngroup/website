@@ -64,8 +64,6 @@
     "impactTitle": "Impact",
     "challengesTitle": "Challenges",
     "challengesIntro": "Add the challenges section introduction in PagesCMS.",
-    "accent": "#2f6fed",
-    "gradient": "linear-gradient(160deg, #6fa0ff 0%, #16224f 100%)",
     "wordmark": "Learnerscape",
     "gallery": [
       "/assets/show5.jpg"
