@@ -1,0 +1,65 @@
+name: Generate Project Index
+
+on:
+  push:
+    branches:
+      - main
+      - pagescms-upgrade
+    paths:
+      - 'content/projects/*.json'
+      - '!content/projects/index.json'
+
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Generate project index
+        run: |
+          python3 <<'PY'
+          import json
+          from pathlib import Path
+
+          projects_dir = Path("content/projects")
+          index_file = projects_dir / "index.json"
+
+          projects = []
+
+          for file in sorted(projects_dir.glob("*.json")):
+              if file.name == "index.json":
+                  continue
+
+              try:
+                  data = json.loads(file.read_text())
+                  projects.append(data)
+              except Exception as e:
+                  print(f"Skipping {file}: {e}")
+
+          index_file.write_text(
+              json.dumps(projects, indent=2, ensure_ascii=False) + "\n"
+          )
+
+          print(f"Generated index with {len(projects)} projects.")
+          PY
+
+      - name: Commit generated index
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          git add content/projects/index.json
+
+          if git diff --cached --quiet; then
+            echo "No changes to project index."
+          else
+            git commit -m "Auto-update project index"
+            git push
+          fi
