@@ -11,7 +11,7 @@
   "capabilities": {
     "title": "Crafting impactful brand identities, digital experiences and strategic design solutions.",
     "list": "UI/UX Design, Brand Identity, Digital Experiences, Publications, Infographics, Books, Campaigns, Data-Driven Experiences, Industrial & Product Design, Packaging, Service Design.",
-    "cards": "some text here"
+    "cards": "[\n  {\n    \"title\": \"Percuro\",\n    \"description\": \"Brand identity built around a modular pattern system.\",\n    \"image\": \"/assets/show3.jpg\"\n  },\n  {\n    \"title\": \"Goloco\",\n    \"description\": \"Wayfinding and signage for a landmark redevelopment.\",\n    \"image\": \"/assets/show4.jpg\"\n  },\n  {\n    \"title\": \"Learnerscape\",\n    \"description\": \"Data-driven infographic identity for an education platform.\",\n    \"image\": \"/assets/show5.jpg\"\n  },\n  {\n    \"title\": \"Arthaye\",\n    \"description\": \"Campaign visual system for a financial services brand.\",\n    \"image\": \"/assets/show8.jpg\"\n  }\n]"
   },
   "features": {
     "title": "Our thoughts align towards detailing and process driven approach",
