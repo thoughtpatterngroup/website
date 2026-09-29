@@ -209,14 +209,6 @@ content:
         label: "Lead Paragraph"
         type: "text"
 
-      - name: "accent"
-        label: "Accent Color (Hex)"
-        type: "string"
-
-      - name: "gradient"
-        label: "Gradient CSS Code"
-        type: "string"
-
       # ----------------------------------------------------------
       # PROJECT GALLERY
       # ----------------------------------------------------------
