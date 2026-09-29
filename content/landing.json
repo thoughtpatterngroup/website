@@ -1,6 +1,6 @@
 {
   "hero": {
-    "title": "Designing meaningful experiences and solutions for complex real-world challenges.",
+    "title": "Designing meaningful experiences and solutions for complex real-worlds challenges.",
     "subtitle": "Everything has a meaning and every smaller thing matters. We help you to nudge outcomes for consumers",
     "image": "/assets/feature6.jpeg"
   },
@@ -11,47 +11,13 @@
   "capabilities": {
     "title": "Crafting impactful brand identities, digital experiences and strategic design solutions.",
     "list": "UI/UX Design, Brand Identity, Digital Experiences, Publications, Infographics, Books, Campaigns, Data-Driven Experiences, Industrial & Product Design, Packaging, Service Design.",
-    "cards": [
-      {
-        "title": "Percuro",
-        "description": "Brand identity built around a modular pattern system.",
-        "image": "/assets/show3.jpg"
-      },
-      {
-        "title": "Goloco",
-        "description": "Wayfinding and signage for a landmark redevelopment.",
-        "image": "/assets/show4.jpg"
-      },
-      {
-        "title": "Learnerscape",
-        "description": "Data-driven infographic identity for an education platform.",
-        "image": "/assets/show5.jpg"
-      },
-      {
-        "title": "Arthaye",
-        "description": "Campaign visual system for a financial services brand.",
-        "image": "/assets/show8.jpg"
-      }
-    ]
+    "cards": "some text here"
   },
   "features": {
     "title": "Our thoughts align towards detailing and process driven approach",
     "subtitle": "Combining complementary skills and relentless drive to turn bold ideas into reality.",
     "image": "/assets/feature18.png",
-    "columns": [
-      {
-        "title": "Build Quick",
-        "text": "Everything you need to build your site in one place. All-in-one website builder for designers and creators. Your big idea starts here."
-      },
-      {
-        "title": "A Lot of blocks",
-        "text": "Start growing in half the time with an all-in-one website builder - no more long hours spent on the boring stuff!"
-      },
-      {
-        "title": "Build Today",
-        "text": "Get your idea out there in the way you want it. Start with Startup. The website builder to help you grow - free from bugs and errors."
-      }
-    ]
+    "columns": "some text here"
   },
   "footer": {
     "copyright": "Copyright © 2026 thethoughtpattern.com",
