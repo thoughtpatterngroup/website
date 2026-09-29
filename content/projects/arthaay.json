@@ -1,9 +1,9 @@
 {
   "slug": "arthaay",
   "title": "Arthaay FinServe ",
-  "meta": "Build new financial service",
+  "meta": "Branding, Illustration, Design Strategy and Information Design",
   "hero": "/assets/SABF_PentagramPost-7.png",
-  "lead": "Add the project introduction and case-study summary in PagesCMS.",
+  "lead": "Cras quis viverra nunc, non molestie nunc. Mauris nisi risus, vehicula vel semper ac, laoreet nec tellus. Sed egestas elit vitae metus efficitur cursus. ",
   "gallery": {
     "grid1": {
       "image1": "/assets/SABF_PentagramPost-12.png",
@@ -39,6 +39,23 @@
       "description": "The Thought Pattern was tasked with creating a brand identity for Payz that would help it achieve its ambition to become a full-service digital bank that raises the bar in a crowded financial market"
     }
   ],
+  "impact": [
+    {
+      "metric": "50%",
+      "title": "Metrics 1",
+      "description": "Metrics 1 -Cras quis viverra nunc, non molestie nunc. Mauris nisi risus, vehicula vel semper ac, laoreet nec tellus. Sed egestas elit vitae metus efficitur cursus. "
+    },
+    {
+      "metric": "3x",
+      "title": "Metrics 2",
+      "description": "Metrics 2 -  Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. "
+    },
+    {
+      "metric": "50+",
+      "title": "Metrics 3",
+      "description": "Aenean posuere metus non erat gravida, id finibus odio bibendum. Nam ullamcorper commodo blandit."
+    }
+  ],
   "challenges": [
     {
       "title": "Challenge Title One",
@@ -51,6 +68,18 @@
     {
       "title": "Challenge Title Three",
       "description": "Curabitur sodales lectus in erat iaculis pharetra. Fusce laoreet turpis id turpis egestas, id gravida quam interdum. In hac habitasse platea dictumst. Nullam in viverra arcu. Sed orci tortor, sodales vitae semper a, facilisis in ex."
+    },
+    {
+      "title": "Challenge Title Four",
+      "description": "Phasellus justo ex, elementum ac mi et, commodo vulputate lectus. Fusce auctor dui arcu, sed semper mauris mattis id. "
+    },
+    {
+      "title": "Challenge Title Five",
+      "description": "Donec cursus varius felis, ac tincidunt velit maximus at. Nulla ut faucibus turpis, ut gravida nunc. "
+    },
+    {
+      "title": "Challenge Title Six",
+      "description": "Suspendisse libero ex, cursus in sem vestibulum, lobortis placerat justo. Phasellus venenatis id nibh faucibus tincidunt."
     }
   ]
 }
