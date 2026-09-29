@@ -5,8 +5,6 @@
     "meta": "Build new financial service",
     "hero": "/assets/SABF_PentagramPost-7.png",
     "lead": "Add the project introduction and case-study summary in PagesCMS.",
-    "accent": "#2f6fed",
-    "gradient": "linear-gradient(160deg, #6fa0ff 0%, #16224f 100%)",
     "gallery": {
       "grid1": {
         "image1": "/assets/SABF_PentagramPost-12.png",
