@@ -3,68 +3,174 @@ media:
   output: /assets
 
 content:
+
+  # ============================================================
+  # LANDING PAGE
+  # ============================================================
+
   - name: "landing-page"
     label: "Landing Page"
     type: "file"
     path: "content/landing.json"
     format: "json"
+
     fields:
+
+      # ----------------------------------------------------------
+      # HERO
+      # ----------------------------------------------------------
+
       - name: "hero"
         label: "Hero Section"
         type: "object"
         fields:
-          - { name: "title", label: "Title", type: "string" }
-          - { name: "subtitle", label: "Subtitle", type: "text" }
-          - { name: "image", label: "Background Image", type: "image" }
+          - name: "title"
+            label: "Title"
+            type: "string"
+
+          - name: "subtitle"
+            label: "Subtitle"
+            type: "text"
+
+          - name: "image"
+            label: "Background Image"
+            type: "image"
+
+
+      # ----------------------------------------------------------
+      # SHOWCASE
+      # ----------------------------------------------------------
 
       - name: "showcase"
         label: "Showcase Section"
         type: "object"
         fields:
-          - { name: "title", label: "Title", type: "string" }
-          - { name: "subtitle", label: "Subtitle", type: "text" }
+          - name: "title"
+            label: "Title"
+            type: "string"
+
+          - name: "subtitle"
+            label: "Subtitle"
+            type: "text"
+
+
+      # ----------------------------------------------------------
+      # CAPABILITIES
+      # ----------------------------------------------------------
 
       - name: "capabilities"
         label: "Capabilities Section"
         type: "object"
         fields:
-          - { name: "title", label: "Title", type: "string" }
-          - { name: "list", label: "Comma Separated Skills", type: "text" }
+
+          - name: "title"
+            label: "Title"
+            type: "string"
+
+          - name: "list"
+            label: "Comma Separated Skills"
+            type: "text"
+
           - name: "cards"
             label: "Capability Cards"
-            type: "list"
+            type: "object"
+            list:
+              collapsible:
+                collapsed: false
+                summary: "{title}"
             fields:
-              - { name: "title", label: "Card Title", type: "string" }
-              - { name: "description", label: "Card Description", type: "text" }
-              - { name: "image", label: "Card Image", type: "image" }
+
+              - name: "title"
+                label: "Card Title"
+                type: "string"
+
+              - name: "description"
+                label: "Card Description"
+                type: "text"
+
+              - name: "image"
+                label: "Card Image"
+                type: "image"
+
+
+      # ----------------------------------------------------------
+      # FEATURES
+      # ----------------------------------------------------------
 
       - name: "features"
         label: "Features Section"
         type: "object"
         fields:
-          - { name: "title", label: "Title", type: "string" }
-          - { name: "subtitle", label: "Subtitle", type: "text" }
-          - { name: "image", label: "Side Illustration", type: "image" }
+
+          - name: "title"
+            label: "Title"
+            type: "string"
+
+          - name: "subtitle"
+            label: "Subtitle"
+            type: "text"
+
+          - name: "image"
+            label: "Side Illustration"
+            type: "image"
+
           - name: "columns"
             label: "Feature Columns"
-            type: "list"
+            type: "object"
+            list:
+              collapsible:
+                collapsed: false
+                summary: "{title}"
             fields:
-              - { name: "title", label: "Column Title", type: "string" }
-              - { name: "text", label: "Column Text", type: "text" }
+
+              - name: "title"
+                label: "Column Title"
+                type: "string"
+
+              - name: "text"
+                label: "Column Text"
+                type: "text"
+
+
+      # ----------------------------------------------------------
+      # FOOTER
+      # ----------------------------------------------------------
 
       - name: "footer"
         label: "Footer Section"
         type: "object"
         fields:
-          - { name: "copyright", label: "Copyright Text", type: "string" }
-          - { name: "email", label: "Contact Email", type: "string" }
+
+          - name: "copyright"
+            label: "Copyright Text"
+            type: "string"
+
+          - name: "email"
+            label: "Contact Email"
+            type: "string"
+
           - name: "social"
             label: "Social Links"
             type: "object"
             fields:
-              - { name: "twitter", label: "Twitter URL", type: "string" }
-              - { name: "facebook", label: "Facebook URL", type: "string" }
-              - { name: "instagram", label: "Instagram URL", type: "string" }
+
+              - name: "twitter"
+                label: "Twitter URL"
+                type: "string"
+
+              - name: "facebook"
+                label: "Facebook URL"
+                type: "string"
+
+              - name: "instagram"
+                label: "Instagram URL"
+                type: "string"
+
+
+
+  # ============================================================
+  # WORK PROJECTS
+  # ============================================================
 
   - name: "work-projects"
     label: "Work Projects"
@@ -72,43 +178,129 @@ content:
     path: "content/projects"
     format: "json"
     filename: "{slug}.json"
+
     view:
       primary: "title"
       summary: "slug"
+
     fields:
-      - { name: "slug", label: "URL Slug", type: "string" }
-      - { name: "title", label: "Project Title", type: "string" }
-      - { name: "meta", label: "Meta Description", type: "string" }
-      - { name: "hero", label: "Hero Image", type: "image" }
-      - { name: "lead", label: "Lead Paragraph", type: "text" }
-      - { name: "accent", label: "Accent Color (Hex)", type: "string" }
-      - { name: "gradient", label: "Gradient CSS Code", type: "string" }
+
+      # ----------------------------------------------------------
+      # BASIC PROJECT INFORMATION
+      # ----------------------------------------------------------
+
+      - name: "slug"
+        label: "URL Slug"
+        type: "string"
+
+      - name: "title"
+        label: "Project Title"
+        type: "string"
+
+      - name: "meta"
+        label: "Meta Description"
+        type: "string"
+
+      - name: "hero"
+        label: "Hero Image"
+        type: "image"
+
+      - name: "lead"
+        label: "Lead Paragraph"
+        type: "text"
+
+      - name: "accent"
+        label: "Accent Color (Hex)"
+        type: "string"
+
+      - name: "gradient"
+        label: "Gradient CSS Code"
+        type: "string"
+
+
+      # ----------------------------------------------------------
+      # QUOTES
+      # ----------------------------------------------------------
 
       - name: "quotes"
         label: "Gallery Quotes"
         type: "object"
         fields:
-          - { name: "quote1", label: "Quote 1", type: "text" }
-          - { name: "quote2", label: "Quote 2", type: "text" }
+
+          - name: "quote1"
+            label: "Quote 1"
+            type: "text"
+
+          - name: "quote2"
+            label: "Quote 2"
+            type: "text"
+
+
+      # ----------------------------------------------------------
+      # PROGRAM FEATURES
+      # ----------------------------------------------------------
 
       - name: "programFeatures"
         label: "Program Features"
-        type: "list"
+        type: "object"
+        list:
+          collapsible:
+            collapsed: false
+            summary: "{title}"
         fields:
-          - { name: "title", label: "Feature Title", type: "string" }
-          - { name: "description", label: "Feature Description", type: "text" }
+
+          - name: "title"
+            label: "Feature Title"
+            type: "string"
+
+          - name: "description"
+            label: "Feature Description"
+            type: "text"
+
+
+      # ----------------------------------------------------------
+      # IMPACT STATS
+      # ----------------------------------------------------------
 
       - name: "impact"
         label: "Impact Stats"
-        type: "list"
+        type: "object"
+        list:
+          collapsible:
+            collapsed: false
+            summary: "{title}"
         fields:
-          - { name: "metric", label: "Metric", type: "string" }
-          - { name: "title", label: "Stat Title", type: "string" }
-          - { name: "description", label: "Stat Description", type: "text" }
+
+          - name: "metric"
+            label: "Metric"
+            type: "string"
+
+          - name: "title"
+            label: "Stat Title"
+            type: "string"
+
+          - name: "description"
+            label: "Stat Description"
+            type: "text"
+
+
+      # ----------------------------------------------------------
+      # COMMON CHALLENGES
+      # ----------------------------------------------------------
 
       - name: "challenges"
         label: "Common Challenges"
-        type: "list"
+        type: "object"
+        list:
+          collapsible:
+            collapsed: false
+            summary: "{title}"
         fields:
-          - { name: "title", label: "Challenge Title", type: "string" }
-          - { name: "description", label: "Challenge Description", type: "text" }
+
+          - name: "title"
+            label: "Challenge Title"
+            type: "string"
+
+          - name: "description"
+            label: "Challenge Description"
+            type: "text"
