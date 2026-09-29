@@ -631,81 +631,235 @@
 
 function renderGallery(data) {
 
-  var wrap = document.getElementById('wdGallery');
+  var gallery = data.gallery || {};
 
-  if (!wrap) {
-    return;
-  }
 
   /*
-   * Clear any existing gallery content.
+   * ============================================================
+   * FIRST 1 × 2 IMAGE GRID
+   * ============================================================
    */
 
-  wrap.innerHTML = '';
+  if (gallery.grid1) {
 
-  /*
-   * Make sure gallery images exist.
-   */
-
-  if (
-    !data.gallery ||
-    !Array.isArray(data.gallery.images)
-  ) {
-
-    console.log(
-      '[Pages CMS] No gallery images found.'
+    setImage(
+      'wdGalleryImg1',
+      gallery.grid1.image1,
+      data.title || 'Project image'
     );
 
-    return;
+    setImage(
+      'wdGalleryImg2',
+      gallery.grid1.image2,
+      data.title || 'Project image'
+    );
+
   }
 
+
   /*
-   * Render each CMS image.
+   * ============================================================
+   * SECOND 1 × 2 IMAGE GRID
+   * ============================================================
    */
 
-  data.gallery.images.forEach(function (item, index) {
+  if (gallery.grid2) {
 
-    /*
-     * Do not create an image if CMS has no image.
-     */
+    setImage(
+      'wdGalleryImg3',
+      gallery.grid2.image1,
+      data.title || 'Project image'
+    );
 
-    if (!item || !item.image) {
-      return;
+    setImage(
+      'wdGalleryImg4',
+      gallery.grid2.image2,
+      data.title || 'Project image'
+    );
+
+  }
+
+
+  /*
+   * ============================================================
+   * HORIZONTAL IMAGE
+   * ============================================================
+   */
+
+  if (gallery.horizontal) {
+
+    setImage(
+      'wdGalleryImg5',
+      gallery.horizontal,
+      data.title || 'Project image'
+    );
+
+  }
+
+
+  /*
+   * ============================================================
+   * ADDITIONAL GALLERY IMAGES
+   * ============================================================
+   */
+
+  var additionalWrap =
+    document.getElementById(
+      'wdAdditionalGallery'
+    );
+
+
+  if (additionalWrap) {
+
+    additionalWrap.innerHTML = '';
+
+
+    if (
+      Array.isArray(gallery.additional) &&
+      gallery.additional.length
+    ) {
+
+      gallery.additional.forEach(
+        function (imagePath, index) {
+
+          if (!imagePath) {
+            return;
+          }
+
+
+          var figure =
+            document.createElement('figure');
+
+
+          var image =
+            document.createElement('img');
+
+
+          image.src =
+            assetUrl(imagePath);
+
+
+          image.alt =
+            data.title
+              ? data.title + ' — Gallery image ' + (index + 1)
+              : 'Project gallery image';
+
+
+          image.loading = 'lazy';
+
+
+          figure.appendChild(image);
+
+          additionalWrap.appendChild(figure);
+
+        }
+      );
+
     }
 
-    var block =
-      document.createElement('div');
+  }
 
-    block.className =
-      'wd-gallery-block wd-cms-image';
 
-    var figure =
-      document.createElement('figure');
+  /*
+   * ============================================================
+   * ACCENT / COLOUR SWATCH
+   * ============================================================
+   *
+   * If you removed accent from your JSON and YAML,
+   * this simply leaves the swatch empty.
+   *
+   * ============================================================
+   */
 
-    var image =
-      document.createElement('img');
+  var swatch =
+    document.getElementById(
+      'wdSwatchColor'
+    );
 
-    image.src =
-      assetUrl(item.image);
 
-    image.alt =
-      item.alt ||
-      item.title ||
-      data.title ||
-      'Project image';
+  if (swatch) {
 
-    image.loading =
-      index === 0
-        ? 'eager'
-        : 'lazy';
+    if (data.accent) {
 
-    figure.appendChild(image);
+      swatch.style.background =
+        data.accent;
 
-    block.appendChild(figure);
+    } else {
 
-    wrap.appendChild(block);
+      swatch.style.background =
+        '#f1f1f1';
 
-  });
+    }
+
+  }
+
+
+  /*
+   * ============================================================
+   * WORDMARK
+   * ============================================================
+   */
+
+  var wordmark =
+    document.getElementById(
+      'wdWordmark'
+    );
+
+
+  if (wordmark && data.gradient) {
+
+    wordmark.style.background =
+      data.gradient;
+
+  }
+
+
+  /*
+   * If gradient has been removed from the JSON,
+   * give the wordmark a neutral background.
+   */
+
+  if (wordmark && !data.gradient) {
+
+    wordmark.style.background =
+      '#222';
+
+  }
+
+
+  /*
+   * ============================================================
+   * WORDMARK TEXT
+   * ============================================================
+   */
+
+  setText(
+    'wdWordmarkText',
+    data.wordmark ||
+    data.title ||
+    'Project'
+  );
+
+
+  /*
+   * ============================================================
+   * QUOTES
+   * ============================================================
+   */
+
+  if (data.quotes) {
+
+    setText(
+      'wdQuote1',
+      data.quotes.quote1 || ''
+    );
+
+    setText(
+      'wdQuote2',
+      data.quotes.quote2 || ''
+    );
+
+  }
 
 }
 
