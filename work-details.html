@@ -272,11 +272,10 @@
          NEXT PROJECT
          ========================================= -->
 
-        <div class="wd-next-project">
-            <a id="wdNextLink" href="work-details.html?project=trident-tech-lab">
-                <span class="wd-next-label"> Next Project </span>
-
-                <span class="wd-next-name" id="wdNextName"> Trident Tech Lab </span>
+        <div class="wd-next-project" id="wdNextProject" hidden>
+            <a id="wdNextLink" href="#" aria-label="Next project">
+                <span class="wd-next-label">Next Project</span>
+                <span class="wd-next-name" id="wdNextName"></span>
             </a>
         </div>
     </div>
@@ -843,6 +842,146 @@ function renderGallery(data) {
 
   /*
    * ============================================================
+   * NEXT PROJECT NAVIGATION
+   * ============================================================
+   *
+   * The generated project index is the single source of truth.
+   * GitHub Actions rebuilds content/projects/index.json whenever
+   * a project JSON file changes.
+   *
+   * Navigation order therefore follows the order in index.json.
+   * The last project loops back to the first project.
+   * ============================================================
+   */
+
+  async function loadNextProject(currentSlug) {
+
+    var nextWrap =
+      document.getElementById('wdNextProject');
+
+    var nextLink =
+      document.getElementById('wdNextLink');
+
+    var nextName =
+      document.getElementById('wdNextName');
+
+    if (!nextWrap || !nextLink || !nextName) {
+      return;
+    }
+
+    /*
+     * Keep the navigation hidden until a valid next project
+     * has been found. This prevents a hard-coded/fallback link
+     * from appearing if the manifest cannot be loaded.
+     */
+    nextWrap.hidden = true;
+    nextLink.removeAttribute('href');
+    nextName.textContent = '';
+
+    try {
+
+      var manifest =
+        await getJSON('content/projects/index.json');
+
+      var projects =
+        Array.isArray(manifest)
+          ? manifest
+          : (Array.isArray(manifest.projects)
+              ? manifest.projects
+              : []);
+
+      /*
+       * Keep only usable project records.
+       */
+      projects = projects.filter(function (project) {
+        return project &&
+               typeof project.slug === 'string' &&
+               project.slug.trim() !== '';
+      });
+
+      if (!projects.length) {
+        console.warn(
+          '[Pages CMS] No projects found for next-project navigation.'
+        );
+        return;
+      }
+
+      var currentIndex =
+        projects.findIndex(function (project) {
+          return project.slug === currentSlug;
+        });
+
+      /*
+       * If the current project is not in the manifest, do not
+       * guess a destination.
+       */
+      if (currentIndex === -1) {
+        console.warn(
+          '[Pages CMS] Current project is not present in index.json:',
+          currentSlug
+        );
+        return;
+      }
+
+      /*
+       * Move to the next project and wrap around at the end.
+       */
+      var nextIndex =
+        (currentIndex + 1) % projects.length;
+
+      var nextProject =
+        projects[nextIndex];
+
+      /*
+       * A one-project site has no meaningful "next" project.
+       */
+      if (!nextProject || nextProject.slug === currentSlug) {
+        return;
+      }
+
+      var nextSlug =
+        nextProject.slug.trim();
+
+      var nextTitle =
+        (nextProject.title || nextSlug).trim();
+
+      nextLink.href =
+        'work-details.html?project=' +
+        encodeURIComponent(nextSlug);
+
+      nextLink.setAttribute(
+        'aria-label',
+        'Next project: ' + nextTitle
+      );
+
+      nextName.textContent =
+        nextTitle;
+
+      nextWrap.hidden = false;
+
+      console.log(
+        '[Pages CMS] Next project:',
+        nextSlug
+      );
+
+    } catch (error) {
+
+      /*
+       * Do not show a stale or hard-coded destination if the
+       * project index cannot be loaded.
+       */
+      console.error(
+        '[Pages CMS] Could not load next-project navigation:',
+        error
+      );
+
+    }
+
+  }
+
+
+  /*
+   * ============================================================
    * LOAD PROJECT
    * ============================================================
    */
@@ -1057,6 +1196,17 @@ function renderGallery(data) {
 
       renderGallery(
         data
+      );
+
+
+      /*
+       * --------------------------------------------------------
+       * NEXT PROJECT
+       * --------------------------------------------------------
+       */
+
+      await loadNextProject(
+        slug
       );
 
 
