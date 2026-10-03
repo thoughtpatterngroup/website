@@ -2,6 +2,10 @@
   "slug": "trident-tech-lab",
   "title": "Trident Tech Lab",
   "meta": "Add project disciplines in PagesCMS",
+  "categories": [
+    "usability",
+    "design-strategy"
+  ],
   "hero": "/assets/E54A1044-B3F7-48EE-B06D-23496E895E43_1_102_o.jpeg",
   "lead": "Add the project introduction and case-study summary in PagesCMS.",
   "gallery": {
