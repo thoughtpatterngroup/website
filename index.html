@@ -373,21 +373,33 @@
     initFilters();
     loadLanding();
   })();
-</script>
-<script>
-  // Hero image grows as the page is scrolled past the first fold
+  // Hero image expands from a smaller starting size as the page scrolls
   (function () {
     var heroSection = document.querySelector('.hero-section');
-    var heroImg = document.querySelector('.hero-image-wrap img');
-    if (!heroSection || !heroImg) return;
+    var heroWrap = document.querySelector('.hero-image-wrap');
+
+    if (!heroSection || !heroWrap) return;
+
     var ticking = false;
+
+    function getStartScale() {
+      return window.innerWidth <= 767 ? 0.90 : 0.78;
+    }
 
     function update() {
       var heroHeight = heroSection.offsetHeight || 1;
-      var scrolled = Math.min(Math.max(window.scrollY, 0), heroHeight);
-      var progress = scrolled / heroHeight; // 0 -> 1 across the hero section
-      var scale = 1 + progress * 0.22;
-      heroImg.style.transform = 'scale(' + scale.toFixed(3) + ')';
+      var animationDistance = heroHeight * 0.75;
+      var scrolled = Math.min(
+        Math.max(window.scrollY, 0),
+        animationDistance
+      );
+
+      var progress = scrolled / animationDistance;
+      var eased = 1 - Math.pow(1 - progress, 2);
+      var startScale = getStartScale();
+      var scale = startScale + (1 - startScale) * eased;
+
+      heroWrap.style.transform = 'scale(' + scale.toFixed(3) + ')';
       ticking = false;
     }
 
@@ -397,6 +409,8 @@
         ticking = true;
       }
     }, { passive: true });
+
+    window.addEventListener('resize', update);
 
     update();
   })();
