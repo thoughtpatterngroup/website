@@ -62,7 +62,7 @@
   <section class="wd-hero">
     <div class="container site-container">
       <div class="wd-hero-frame">
-        <img id="wdHeroImage" src="assets/show1.jpg" class="wd-hero-image" alt="Project cover">
+        <img id="wdHeroImage" src="" class="wd-hero-image" alt="Project cover" hidden>
       </div>
     </div>
   </section>
@@ -425,11 +425,39 @@
       return;
     }
 
-    image.src = assetUrl(value);
+    var src = assetUrl(value);
 
     if (altText) {
       image.alt = altText;
     }
+
+    /*
+     * Preload the requested image before displaying it.
+     * This prevents the previous/default project image from
+     * flashing while the new project is being rendered.
+     */
+    var preloader = new Image();
+
+    image.hidden = true;
+
+    preloader.onload = function () {
+      image.src = src;
+      image.hidden = false;
+    };
+
+    preloader.onerror = function () {
+      console.error(
+        '[Pages CMS] Could not load image:',
+        src
+      );
+      image.hidden = true;
+    };
+
+    preloader.src =
+      src +
+      (src.indexOf('?') === -1
+        ? '?v=' + Date.now()
+        : '&v=' + Date.now());
 
   }
 
