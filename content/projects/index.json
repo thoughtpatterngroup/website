@@ -240,6 +240,10 @@
     "slug": "myristica",
     "title": "Myristica Ventures",
     "meta": "Add project disciplines in PagesCMS",
+    "categories": [
+      "illustrations",
+      "branding"
+    ],
     "hero": "/assets/mv.jpeg",
     "lead": "Add the project introduction and case-study summary in PagesCMS."
   },
