@@ -86,67 +86,13 @@
         </div>
         <div class="col-lg-5 offset-lg-1">
           <p id="featuresSubtitle" class="intro-copy">Combining complementary skills and relentless drive to turn bold ideas into reality.</p>
-          <div class="filter-pills">
+          <div id="projectFilters" class="filter-pills">
             <button type="button" class="filter-pill active" data-filter="all">All</button>
-            <button type="button" class="filter-pill" data-filter="usability">Usability</button>
-            <button type="button" class="filter-pill" data-filter="branding">Branding</button>
-            <button type="button" class="filter-pill" data-filter="illustrations">Illustrations</button>
-            <button type="button" class="filter-pill" data-filter="design-strategy">Design Strategy</button>
-            <button type="button" class="filter-pill" data-filter="information-design">Information Design</button>
           </div>
         </div>
       </div>
 
-      <div id="projectsGrid" class="row g-4 showcase-grid">
-        <div class="col-md-6 project-card" data-categories="branding,illustrations,design-strategy,information-design">
-          <a href="work-details.html?project=little-planet" class="project-link">
-            <img src="assets/show1.jpg" class="project-image feature-image-wrap" alt="Little Planet">
-            <div class="project-meta"><span>Little Planet</span><span class="project-arrow"></span></div>
-          </a>
-        </div>
-        <div class="col-md-6 project-card" data-categories="usability,design-strategy">
-          <a href="work-details.html?project=trident-tech-lab" class="project-link">
-            <img src="assets/show2.jpg" class="project-image feature-image-wrap" alt="Trident Tech Lab">
-            <div class="project-meta"><span>Trident Tech Lab</span><span class="project-arrow"></span></div>
-          </a>
-        </div>
-        <div class="col-md-6 project-card" data-categories="branding,illustrations">
-          <a href="work-details.html?project=percuro" class="project-link">
-            <img src="assets/show3.jpg" class="project-image feature-image-wrap" alt="Percuro">
-            <div class="project-meta"><span>Percuro</span><span class="project-arrow"></span></div>
-          </a>
-        </div>
-        <div class="col-md-6 project-card" data-categories="usability,information-design">
-          <a href="work-details.html?project=goloco" class="project-link">
-            <img src="assets/show4.jpg" class="project-image feature-image-wrap" alt="Goloco">
-            <div class="project-meta"><span>Goloco</span><span class="project-arrow"></span></div>
-          </a>
-        </div>
-        <div class="col-md-6 project-card" data-categories="information-design,illustrations">
-          <a href="work-details.html?project=learnerscape" class="project-link">
-            <img src="assets/show5.jpg" class="project-image feature-image-wrap" alt="Learnerscape">
-            <div class="project-meta"><span>Learnerscape</span><span class="project-arrow"></span></div>
-          </a>
-        </div>
-        <div class="col-md-6 project-card" data-categories="illustrations,branding">
-          <a href="work-details.html?project=myristica" class="project-link">
-            <img src="assets/show6.jpg" class="project-image feature-image-wrap" alt="Myristica">
-            <div class="project-meta"><span>Myristica</span><span class="project-arrow"></span></div>
-          </a>
-        </div>
-        <div class="col-md-6 project-card" data-categories="usability,branding">
-          <a href="work-details.html?project=small" class="project-link">
-            <img src="assets/show7.jpg" class="project-image feature-image-wrap" alt="Small">
-            <div class="project-meta"><span>Small</span><span class="project-arrow"></span></div>
-          </a>
-        </div>
-        <div class="col-md-6 project-card" data-categories="branding,design-strategy">
-          <a href="work-details.html?project=arthay" class="project-link">
-            <img src="assets/show8.jpg" class="project-image feature-image-wrap" alt="Arthaye">
-            <div class="project-meta"><span>Arthaye</span><span class="project-arrow"></span></div>
-          </a>
-        </div>
-      </div>
+      <div id="projectsGrid" class="row g-4 showcase-grid"></div>
     </div>
   </section>
 
@@ -260,19 +206,71 @@
       if (el && value !== undefined && value !== null) el.textContent = value;
     }
 
+    var CATEGORY_LABELS = {
+      "usability": "Usability",
+      "branding": "Branding",
+      "illustrations": "Illustrations",
+      "design-strategy": "Design Strategy",
+      "information-design": "Information Design"
+    };
+
+    var CATEGORY_ORDER = [
+      "usability",
+      "branding",
+      "illustrations",
+      "design-strategy",
+      "information-design"
+    ];
+
+    function escapeHtml(value) {
+      return String(value == null ? '' : value)
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/\"/g, '&quot;')
+        .replace(/'/g, '&#039;');
+    }
+
+    function renderFilters(projects) {
+      var wrap = document.getElementById('projectFilters');
+      if (!wrap || !Array.isArray(projects)) return;
+
+      var available = {};
+      projects.forEach(function (project) {
+        if (!Array.isArray(project.categories)) return;
+        project.categories.forEach(function (category) {
+          if (CATEGORY_LABELS[category]) available[category] = true;
+        });
+      });
+
+      var categories = CATEGORY_ORDER.filter(function (category) {
+        return available[category];
+      });
+
+      wrap.innerHTML = '<button type="button" class="filter-pill active" data-filter="all">All</button>' +
+        categories.map(function (category) {
+          return '<button type="button" class="filter-pill" data-filter="' +
+            escapeHtml(category) + '">' + escapeHtml(CATEGORY_LABELS[category]) + '</button>';
+        }).join('');
+    }
+
     function renderProjects(projects) {
       var grid = document.getElementById('projectsGrid');
       if (!grid || !Array.isArray(projects)) return;
 
       grid.innerHTML = projects.map(function (project) {
-        var categories = Array.isArray(project.categories) ? project.categories.join(',') : '';
+        var categories = Array.isArray(project.categories) ? project.categories : [];
         var image = assetUrl(project.image || project.hero || '');
         var slug = encodeURIComponent(project.slug || '');
         var title = project.title || project.slug || 'Project';
-        return '<div class="col-md-6 project-card" data-categories="' + categories + '">' +
+        var categoryAttr = categories.map(function (category) {
+          return escapeHtml(category);
+        }).join(',');
+
+        return '<div class="col-md-6 project-card" data-categories="' + categoryAttr + '">' +
           '<a href="work-details.html?project=' + slug + '" class="project-link">' +
-          '<img src="' + image + '" class="project-image feature-image-wrap" alt="' + title.replace(/"/g, '&quot;') + '">' +
-          '<div class="project-meta"><span>' + title + '</span><span class="project-arrow"></span></div>' +
+          '<img src="' + escapeHtml(image) + '" class="project-image feature-image-wrap" alt="' + escapeHtml(title) + '">' +
+          '<div class="project-meta"><span>' + escapeHtml(title) + '</span><span class="project-arrow"></span></div>' +
           '</a></div>';
       }).join('');
 
@@ -301,15 +299,20 @@
 
     function initFilters() {
       var pills = document.querySelectorAll('.filter-pill');
-      var cards = document.querySelectorAll('.project-card');
       pills.forEach(function (pill) {
         pill.onclick = function () {
           pills.forEach(function (p) { p.classList.remove('active'); });
           pill.classList.add('active');
+
           var filter = pill.getAttribute('data-filter');
+          var cards = document.querySelectorAll('.project-card');
+
           cards.forEach(function (card) {
-            var cats = (card.getAttribute('data-categories') || '').split(',');
-            card.classList.toggle('is-hidden', filter !== 'all' && cats.indexOf(filter) === -1);
+            var cats = (card.getAttribute('data-categories') || '')
+              .split(',')
+              .filter(Boolean);
+            var show = filter === 'all' || cats.indexOf(filter) !== -1;
+            card.classList.toggle('is-hidden', !show);
           });
         };
       });
@@ -358,9 +361,10 @@
 
       try {
         var manifest = await getJSON('content/projects/index.json');
-        renderProjects(manifest.projects || manifest);
+        var projects = manifest.projects || manifest;
+        renderFilters(projects);
+        renderProjects(projects);
       } catch (error) {
-        // The original HTML cards remain as a graceful fallback.
         console.error('Project manifest could not be loaded:', error);
         initFilters();
       }
@@ -370,25 +374,6 @@
     loadLanding();
   })();
 </script>
-
-<script>
-  // Work section filtering
-  (function () {
-    var pills = document.querySelectorAll('.filter-pill');
-    var cards = document.querySelectorAll('.project-card');
-    pills.forEach(function (pill) {
-      pill.addEventListener('click', function () {
-        pills.forEach(function (p) { p.classList.remove('active'); });
-        pill.classList.add('active');
-        var filter = pill.getAttribute('data-filter');
-        cards.forEach(function (card) {
-          var cats = (card.getAttribute('data-categories') || '').split(',');
-          var show = filter === 'all' || cats.indexOf(filter) !== -1;
-          card.classList.toggle('is-hidden', !show);
-        });
-      });
-    });
-  })();
 
   // Hero image grows as the page is scrolled past the first fold
   (function () {
