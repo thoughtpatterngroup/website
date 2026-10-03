@@ -178,6 +178,8 @@ content:
     path: "content/projects"
     format: "json"
     filename: "{slug}.json"
+    exclude:
+      - "index.json"
 
     view:
       primary: "title"
@@ -200,6 +202,28 @@ content:
       - name: "meta"
         label: "Meta Description"
         type: "string"
+
+      # ----------------------------------------------------------
+      # PROJECT CATEGORIES / FILTER TAGS
+      # ----------------------------------------------------------
+
+      - name: "categories"
+        label: "Project Categories"
+        type: "select"
+        description: "Select one or more categories used to filter projects on the Work section."
+        options:
+          multiple: true
+          values:
+            - name: "usability"
+              label: "Usability"
+            - name: "branding"
+              label: "Branding"
+            - name: "illustrations"
+              label: "Illustrations"
+            - name: "design-strategy"
+              label: "Design Strategy"
+            - name: "information-design"
+              label: "Information Design"
 
       - name: "hero"
         label: "Hero Image"
