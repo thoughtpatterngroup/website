@@ -209,76 +209,18 @@
 
 <!-- Project gallery -->
 <section class="wd-gallery">
-    <div class="container site-container">
-        <!-- =========================================
-         FIRST 1 × 2 IMAGE GRID
-         ========================================= -->
+  <div class="container site-container">
+    <!-- Gallery blocks are rendered here from Pages CMS in their saved order. -->
+    <div id="wdGalleryBlocks"></div>
 
-        <div class="wd-gallery-block wd-split">
-            <figure>
-                <img id="wdGalleryImg1" src="" alt="" />
-            </figure>
-
-            <figure>
-                <img id="wdGalleryImg2" src="" alt="" />
-            </figure>
-        </div>
-
-        <!-- =========================================
-         FIRST QUOTE
-         ========================================= -->
-
-        <div class="wd-gallery-block wd-quote-row">
-            <p class="wd-quote" id="wdQuote1"></p>
-        </div>
-
-        <!-- =========================================
-         SECOND 1 × 2 IMAGE GRID
-         ========================================= -->
-
-        <div class="wd-gallery-block wd-split">
-            <figure>
-                <img id="wdGalleryImg3" src="" alt="" />
-            </figure>
-
-            <figure>
-                <img id="wdGalleryImg4" src="" alt="" />
-            </figure>
-        </div>
-
-        <!-- =========================================
-         HORIZONTAL IMAGE
-         ========================================= -->
-
-        <div class="wd-gallery-block wd-horizontal" id="wdHorizontalImage">
-            <img id="wdGalleryImg5" src="" alt="" />
-        </div>
-
-        <!-- =========================================
-         ADDITIONAL GALLERY IMAGES
-         ========================================= -->
-
-        <div id="wdAdditionalGallery" class="wd-additional-gallery"></div>
-
-        <!-- =========================================
-         SECOND QUOTE
-         ========================================= -->
-
-        <div class="wd-gallery-block wd-quote-row">
-            <p class="wd-quote" id="wdQuote2"></p>
-        </div>
-
-        <!-- =========================================
-         NEXT PROJECT
-         ========================================= -->
-
-        <div class="wd-next-project" id="wdNextProject" hidden>
-            <a id="wdNextLink" href="#" aria-label="Next project">
-                <span class="wd-next-label">Next Project</span>
-                <span class="wd-next-name" id="wdNextName"></span>
-            </a>
-        </div>
+    <!-- Next project -->
+    <div class="wd-next-project" id="wdNextProject" hidden>
+      <a id="wdNextLink" href="#" aria-label="Next project">
+        <span class="wd-next-label">Next Project</span>
+        <span class="wd-next-name" id="wdNextName"></span>
+      </a>
     </div>
+  </div>
 </section>
 
 </main>
@@ -632,241 +574,257 @@
  * ------------------------------------------------------------
  */
 
-function renderGallery(data) {
+function createGalleryImage(src, altText) {
 
-  var gallery = data.gallery || {};
+  var image = document.createElement('img');
 
+  image.alt = altText || 'Project gallery image';
+  image.loading = 'lazy';
 
-  /*
-   * ============================================================
-   * FIRST 1 × 2 IMAGE GRID
-   * ============================================================
-   */
+  var resolved = assetUrl(src);
 
-  if (gallery.grid1) {
-
-    setImage(
-      'wdGalleryImg1',
-      gallery.grid1.image1,
-      data.title || 'Project image'
-    );
-
-    setImage(
-      'wdGalleryImg2',
-      gallery.grid1.image2,
-      data.title || 'Project image'
-    );
-
+  if (!resolved) {
+    return image;
   }
 
-
   /*
-   * ============================================================
-   * SECOND 1 × 2 IMAGE GRID
-   * ============================================================
+   * Preload gallery images before revealing them. This avoids
+   * broken/empty image states while Pages CMS content loads.
    */
+  image.hidden = true;
 
-  if (gallery.grid2) {
+  var preloader = new Image();
 
-    setImage(
-      'wdGalleryImg3',
-      gallery.grid2.image1,
-      data.title || 'Project image'
+  preloader.onload = function () {
+    image.src = resolved;
+    image.hidden = false;
+  };
+
+  preloader.onerror = function () {
+    console.error(
+      '[Pages CMS] Could not load gallery image:',
+      resolved
     );
-
-    setImage(
-      'wdGalleryImg4',
-      gallery.grid2.image2,
-      data.title || 'Project image'
-    );
-
-  }
-
-
-  /*
-   * ============================================================
-   * HORIZONTAL IMAGE
-   * ============================================================
-   */
-
-  if (gallery.horizontal) {
-
-    setImage(
-      'wdGalleryImg5',
-      gallery.horizontal,
-      data.title || 'Project image'
-    );
-
-  }
-
-
-  /*
-   * ============================================================
-   * ADDITIONAL GALLERY IMAGES
-   * ============================================================
-   */
-
-  var additionalWrap =
-    document.getElementById(
-      'wdAdditionalGallery'
-    );
-
-
-  if (additionalWrap) {
-
-    additionalWrap.innerHTML = '';
-
-
-    if (
-      Array.isArray(gallery.additional) &&
-      gallery.additional.length
-    ) {
-
-      gallery.additional.forEach(
-        function (imagePath, index) {
-
-          if (!imagePath) {
-            return;
-          }
-
-
-          var figure =
-            document.createElement('figure');
-
-
-          var image =
-            document.createElement('img');
-
-
-          image.src =
-            assetUrl(imagePath);
-
-
-          image.alt =
-            data.title
-              ? data.title + ' — Gallery image ' + (index + 1)
-              : 'Project gallery image';
-
-
-          image.loading = 'lazy';
-
-
-          figure.appendChild(image);
-
-          additionalWrap.appendChild(figure);
-
-        }
-      );
-
-    }
-
-  }
-
-
-  /*
-   * ============================================================
-   * ACCENT / COLOUR SWATCH
-   * ============================================================
-   *
-   * If you removed accent from your JSON and YAML,
-   * this simply leaves the swatch empty.
-   *
-   * ============================================================
-   */
-
-  var swatch =
-    document.getElementById(
-      'wdSwatchColor'
-    );
-
-
-  if (swatch) {
-
-    if (data.accent) {
-
-      swatch.style.background =
-        data.accent;
-
-    } else {
-
-      swatch.style.background =
-        '#f1f1f1';
-
-    }
-
-  }
-
-
-  /*
-   * ============================================================
-   * WORDMARK
-   * ============================================================
-   */
-
-  var wordmark =
-    document.getElementById(
-      'wdWordmark'
-    );
-
-
-  if (wordmark && data.gradient) {
-
-    wordmark.style.background =
-      data.gradient;
-
-  }
-
-
-  /*
-   * If gradient has been removed from the JSON,
-   * give the wordmark a neutral background.
-   */
-
-  if (wordmark && !data.gradient) {
-
-    wordmark.style.background =
-      '#222';
-
-  }
-
-
-  /*
-   * ============================================================
-   * WORDMARK TEXT
-   * ============================================================
-   */
-
-  setText(
-    'wdWordmarkText',
-    data.wordmark ||
-    data.title ||
-    'Project'
-  );
-
-
-  /*
-   * ============================================================
-   * QUOTES
-   * ============================================================
-   */
-
-  if (data.quotes) {
-
-    setText(
-      'wdQuote1',
-      data.quotes.quote1 || ''
-    );
-
-    setText(
-      'wdQuote2',
-      data.quotes.quote2 || ''
-    );
-
-  }
-
+    image.hidden = true;
+  };
+
+  preloader.src =
+    resolved +
+    (resolved.indexOf('?') === -1
+      ? '?v=' + Date.now()
+      : '&v=' + Date.now());
+
+  return image;
 }
 
 
+/*
+ * ------------------------------------------------------------
+ * Render Project Gallery
+ * ------------------------------------------------------------
+ *
+ * The gallery is now an ordered Pages CMS block list.
+ *
+ * Supported block types:
+ *
+ *   image-grid
+ *   gallery-image
+ *   horizontal-image
+ *   gallery-quote
+ *
+ * Every gallery-quote is ONE independent block.
+ * Pages CMS controls the order, so quotes can be inserted
+ * anywhere and moved up/down between image blocks.
+ * ------------------------------------------------------------
+ */
+
+function renderGallery(data) {
+
+  var wrap =
+    document.getElementById('wdGalleryBlocks');
+
+  if (!wrap) {
+    return;
+  }
+
+  wrap.innerHTML = '';
+
+  var gallery = data.gallery;
+
+  if (!Array.isArray(gallery)) {
+    return;
+  }
+
+  gallery.forEach(function (block) {
+
+    if (!block || !block.type) {
+      return;
+    }
+
+    var section =
+      document.createElement('div');
+
+    section.className =
+      'wd-gallery-block';
+
+
+    /*
+     * ========================================================
+     * 1 × 2 IMAGE GRID
+     * ========================================================
+     */
+
+    if (block.type === 'image-grid') {
+
+      section.classList.add('wd-split');
+
+      var figure1 =
+        document.createElement('figure');
+
+      var figure2 =
+        document.createElement('figure');
+
+      if (block.image1) {
+
+        figure1.appendChild(
+          createGalleryImage(
+            block.image1,
+            data.title
+              ? data.title + ' — Gallery image'
+              : 'Project gallery image'
+          )
+        );
+
+      }
+
+      if (block.image2) {
+
+        figure2.appendChild(
+          createGalleryImage(
+            block.image2,
+            data.title
+              ? data.title + ' — Gallery image'
+              : 'Project gallery image'
+          )
+        );
+
+      }
+
+      if (figure1.childNodes.length) {
+        section.appendChild(figure1);
+      }
+
+      if (figure2.childNodes.length) {
+        section.appendChild(figure2);
+      }
+
+    }
+
+
+    /*
+     * ========================================================
+     * SINGLE GALLERY IMAGE
+     * ========================================================
+     */
+
+    else if (block.type === 'gallery-image') {
+
+      section.classList.add('wd-single-image');
+
+      if (block.image) {
+
+        section.appendChild(
+          createGalleryImage(
+            block.image,
+            data.title
+              ? data.title + ' — Gallery image'
+              : 'Project gallery image'
+          )
+        );
+
+      }
+
+    }
+
+
+    /*
+     * ========================================================
+     * HORIZONTAL IMAGE
+     * ========================================================
+     */
+
+    else if (block.type === 'horizontal-image') {
+
+      section.classList.add('wd-horizontal');
+
+      if (block.image) {
+
+        section.appendChild(
+          createGalleryImage(
+            block.image,
+            data.title
+              ? data.title + ' — Gallery image'
+              : 'Project gallery image'
+          )
+        );
+
+      }
+
+    }
+
+
+    /*
+     * ========================================================
+     * ONE INDEPENDENT GALLERY QUOTE
+     * ========================================================
+     */
+
+    else if (block.type === 'gallery-quote') {
+
+      section.classList.add('wd-quote-row');
+
+      var quote =
+        document.createElement('p');
+
+      quote.className =
+        'wd-quote';
+
+      quote.textContent =
+        block.quote || '';
+
+      if (!block.quote) {
+        return;
+      }
+
+      section.appendChild(quote);
+
+    }
+
+
+    /*
+     * Ignore unknown block types rather than breaking
+     * the complete project page.
+     */
+
+    else {
+
+      console.warn(
+        '[Pages CMS] Unknown gallery block type:',
+        block.type
+      );
+
+      return;
+
+    }
+
+
+    if (section.childNodes.length) {
+      wrap.appendChild(section);
+    }
+
+  });
+
+}
 
   /*
    * ============================================================
