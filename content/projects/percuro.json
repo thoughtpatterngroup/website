@@ -15,12 +15,11 @@
   "challengesIntro": "Add the challenges section introduction in PagesCMS.",
   "wordmark": "Percuro",
   "gallery": [
-    "/assets/show3.jpg"
+    {
+      "type": "gallery-image",
+      "image": "/assets/show3.jpg"
+    }
   ],
-  "quotes": {
-    "quote1": "",
-    "quote2": ""
-  },
   "programFeatures": [],
   "impact": [],
   "challenges": []

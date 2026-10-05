@@ -6,10 +6,6 @@
   "lead": "If your brand is slowly becoming irrelevant, it's costing you 1-3% of market share every year. Our Brand Refresh Program stops the fade. We identify what still resonates, eliminate what doesn't, and evolve your brand to reclaim distinction and desirability.",
   "accent": "#2f6fed",
   "gradient": "linear-gradient(160deg, #6fa0ff 0%, #16224f 100%)",
-  "quotes": {
-    "quote1": "The pattern system was built to feel handmade at any scale, from a hang-tag to a shopfront.",
-    "quote2": "Consistency became a feature, not a constraint — every touchpoint now reads as unmistakably Little Planet."
-  },
   "programFeatures": [
     {
       "title": "Brand Positioning & Messaging Guidelines",
@@ -97,10 +93,33 @@
   "challengesIntro": "If you're facing any of these challenges, we can customize our Brand Refresh Program to help.",
   "wordmark": "Little Planet",
   "gallery": [
-    "/assets/show1.jpg",
-    "/assets/show2.jpg",
-    "/assets/show3.jpg",
-    "/assets/show4.jpg",
-    "/assets/show5.jpg"
+    {
+      "type": "gallery-image",
+      "image": "/assets/show1.jpg"
+    },
+    {
+      "type": "gallery-image",
+      "image": "/assets/show2.jpg"
+    },
+    {
+      "type": "gallery-image",
+      "image": "/assets/show3.jpg"
+    },
+    {
+      "type": "gallery-image",
+      "image": "/assets/show4.jpg"
+    },
+    {
+      "type": "gallery-image",
+      "image": "/assets/show5.jpg"
+    },
+    {
+      "type": "gallery-quote",
+      "quote": "The pattern system was built to feel handmade at any scale, from a hang-tag to a shopfront."
+    },
+    {
+      "type": "gallery-quote",
+      "quote": "Consistency became a feature, not a constraint — every touchpoint now reads as unmistakably Little Planet."
+    }
   ]
 }

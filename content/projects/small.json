@@ -15,12 +15,11 @@
   "challengesIntro": "Add the challenges section introduction in PagesCMS.",
   "wordmark": "Small",
   "gallery": [
-    "/assets/show7.jpg"
+    {
+      "type": "gallery-image",
+      "image": "/assets/show7.jpg"
+    }
   ],
-  "quotes": {
-    "quote1": "",
-    "quote2": ""
-  },
   "programFeatures": [],
   "impact": [],
   "challenges": []

@@ -15,12 +15,11 @@
   "challengesIntro": "Add the challenges section introduction in PagesCMS.",
   "wordmark": "Learnerscape",
   "gallery": [
-    "/assets/show5.jpg"
+    {
+      "type": "gallery-image",
+      "image": "/assets/show5.jpg"
+    }
   ],
-  "quotes": {
-    "quote1": "",
-    "quote2": ""
-  },
   "programFeatures": [],
   "impact": [],
   "challenges": []

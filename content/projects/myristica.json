@@ -7,5 +7,6 @@
     "branding"
   ],
   "hero": "/assets/mv.jpeg",
-  "lead": "Add the project introduction and case-study summary in PagesCMS."
+  "lead": "Add the project introduction and case-study summary in PagesCMS.",
+  "gallery": []
 }

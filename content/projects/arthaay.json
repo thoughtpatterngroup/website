@@ -7,27 +7,46 @@
   ],
   "hero": "/assets/SABF_PentagramPost-7.png",
   "lead": "Cras quis viverra nunc, non molestie nunc. Mauris nisi risus, vehicula vel semper ac, laoreet nec tellus. Sed egestas elit vitae metus efficitur cursus. ",
-  "gallery": {
-    "grid1": {
+  "gallery": [
+    {
+      "type": "image-grid",
       "image1": "/assets/SABF_PentagramPost-12.png",
       "image2": "/assets/SABF_PentagramPost-11.png"
     },
-    "grid2": {
+    {
+      "type": "gallery-quote",
+      "quote": "As an expression of Arthaay brand personality the typeface needed to communicate the seamless ease of digital banking with a distinctive style and appropriately align with the stature and trust SMBC has built"
+    },
+    {
+      "type": "image-grid",
       "image1": "/assets/SABF_PentagramPost-8.png",
       "image2": "/assets/SABF_PentagramPost-9.png"
     },
-    "horizontal": "/assets/SABF_PentagramPost-4.png",
-    "additional": [
-      "/assets/SABF_PentagramPost-19.png",
-      "/assets/SABF_PentagramPost-21 (1).png",
-      "/assets/SABF_PentagramPost-18.png",
-      "/assets/SABF_PentagramPost-22.png"
-    ]
-  },
-  "quotes": {
-    "quote1": "As an expression of Arthaay brand personality the typeface needed to communicate the seamless ease of digital banking with a distinctive style and appropriately align with the stature and trust SMBC has built",
-    "quote2": "Focusing on subtle form alterations and a humanist stroke style that created a strong sense of forward momentum within the ductus—the calligraphic flow between letters—to communicate connection and progression"
-  },
+    {
+      "type": "horizontal-image",
+      "image": "/assets/SABF_PentagramPost-4.png"
+    },
+    {
+      "type": "gallery-image",
+      "image": "/assets/SABF_PentagramPost-19.png"
+    },
+    {
+      "type": "gallery-image",
+      "image": "/assets/SABF_PentagramPost-21 (1).png"
+    },
+    {
+      "type": "gallery-image",
+      "image": "/assets/SABF_PentagramPost-18.png"
+    },
+    {
+      "type": "gallery-image",
+      "image": "/assets/SABF_PentagramPost-22.png"
+    },
+    {
+      "type": "gallery-quote",
+      "quote": "Focusing on subtle form alterations and a humanist stroke style that created a strong sense of forward momentum within the ductus—the calligraphic flow between letters—to communicate connection and progression"
+    }
+  ],
   "programFeatures": [
     {
       "title": "Branding",
