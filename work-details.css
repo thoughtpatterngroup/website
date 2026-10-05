@@ -277,3 +277,24 @@
   }
 
 }
+
+/* =========================================
+   CUSTOM SECTION HEADING ADJUSTMENTS
+   ========================================= */
+
+/* Impact heading */
+#wdImpactTitle {
+  max-width: 500px;
+  line-height: 1;
+}
+
+#wdImpactTitle span {
+  display: block;
+  margin-top: 8px;
+}
+
+/* Common Challenges heading */
+#wdChallengesTitle {
+  white-space: nowrap;
+  max-width: none;
+}
