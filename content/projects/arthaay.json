@@ -35,6 +35,10 @@
       "image": "/assets/SABF_PentagramPost-21 (1).png"
     },
     {
+      "type": "gallery-quote",
+      "quote": "Nulla imperdiet quis arcu sed porttitor. Nulla placerat eget dolor sed molestie. Nunc tempus metus sit amet ullamcorper dignissim. Pellentesque id odio ultrices, eleifend nisi quis, tincidunt eros. Nam blandit risus vel dolor luctus sollicitudin. Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+    },
+    {
       "type": "gallery-image",
       "image": "/assets/SABF_PentagramPost-18.png"
     },
