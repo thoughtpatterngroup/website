@@ -162,6 +162,23 @@
   text-transform: lowercase;
 }
 
+
+
+/* Single gallery image block */
+.wd-single-image {
+  width: 100%;
+  overflow: hidden;
+  border-radius: 4px;
+}
+
+.wd-single-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+
 /* =========================================
    HORIZONTAL PROJECT IMAGE
    ========================================= */
