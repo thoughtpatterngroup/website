@@ -236,85 +236,50 @@ content:
       # ----------------------------------------------------------
       # PROJECT GALLERY
       # ----------------------------------------------------------
+      # Reorderable gallery blocks. Each Gallery Quote is a
+      # single independent item that can be added and moved
+      # anywhere within the gallery.
 
       - name: "gallery"
         label: "Project Gallery"
-        type: "object"
-        fields:
+        type: "block"
+        list:
+          collapsible:
+            collapsed: false
+            summary: "{type} ({index})"
+        blockKey: "type"
+        blocks:
 
-          # ------------------------------------------------------
-          # FIRST 1 × 2 IMAGE GRID
-          # ------------------------------------------------------
-
-          - name: "grid1"
-            label: "First 1 × 2 Image Grid"
-            type: "object"
+          - name: "image-grid"
+            label: "1 × 2 Image Grid"
             fields:
-
               - name: "image1"
                 label: "Grid Image 1"
                 type: "image"
-
               - name: "image2"
                 label: "Grid Image 2"
                 type: "image"
 
-
-          # ------------------------------------------------------
-          # SECOND 1 × 2 IMAGE GRID
-          # ------------------------------------------------------
-
-          - name: "grid2"
-            label: "Second 1 × 2 Image Grid"
-            type: "object"
+          - name: "gallery-image"
+            label: "Gallery Image"
             fields:
-
-              - name: "image1"
-                label: "Grid Image 1"
+              - name: "image"
+                label: "Image"
                 type: "image"
 
-              - name: "image2"
-                label: "Grid Image 2"
-                type: "image"
-
-
-          # ------------------------------------------------------
-          # HORIZONTAL IMAGE
-          # ------------------------------------------------------
-
-          - name: "horizontal"
+          - name: "horizontal-image"
             label: "Horizontal Image"
-            type: "image"
+            fields:
+              - name: "image"
+                label: "Image"
+                type: "image"
 
-
-          # ------------------------------------------------------
-          # ADDITIONAL GALLERY IMAGES
-          # ------------------------------------------------------
-
-          - name: "additional"
-            label: "Additional Gallery Images"
-            type: "image"
-            list:
-              collapsible:
-                collapsed: false
-                summary: "Gallery Image"
-                
-      # ----------------------------------------------------------
-      # QUOTES
-      # ----------------------------------------------------------
-
-      - name: "quotes"
-        label: "Gallery Quotes"
-        type: "object"
-        fields:
-
-          - name: "quote1"
-            label: "Quote 1"
-            type: "text"
-
-          - name: "quote2"
-            label: "Quote 2"
-            type: "text"
+          - name: "gallery-quote"
+            label: "Gallery Quote"
+            fields:
+              - name: "quote"
+                label: "Quote"
+                type: "text"
 
 
       # ----------------------------------------------------------
