@@ -46,7 +46,7 @@ a { color: inherit; }
 }
 
 .navbar-brand { margin: 0; padding: 0; line-height: 1; }
-.navbar-brand img { width: 88px; height: auto; }
+.navbar-brand img { width: 300px; height: auto; }
 
 .navbar-nav { gap: 30px; }
 .nav-link {
