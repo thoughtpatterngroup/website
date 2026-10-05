@@ -33,8 +33,15 @@ content:
             type: "text"
 
           - name: "image"
-            label: "Background Image"
+            label: "Hero Poster / Fallback Image"
             type: "image"
+
+          - name: "video"
+            label: "Hero Video"
+            type: "file"
+            options:
+              categories: [video]
+              extensions: [mp4, webm, mov]
 
 
       # ----------------------------------------------------------
