@@ -128,7 +128,7 @@ h1 {
   overflow: hidden;
   border-radius: 18px;
   flex: 1 1 auto;
-  min-height: 260px;
+  min-height: 560px;
   position: relative;
 
   /* Start inset and expand to full size while scrolling. */
