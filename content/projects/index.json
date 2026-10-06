@@ -175,10 +175,44 @@
     "slug": "little-planet",
     "title": "Little Planet",
     "meta": "Branding, Illustration, Design Strategy and Information Design",
-    "hero": "/assets/show1.jpg",
+    "categories": [
+      "branding",
+      "illustrations",
+      "design-strategy",
+      "information-design"
+    ],
+    "hero": "/assets/22612EEE-715D-4BE8-9ED2-DA075765ABD2.jpeg",
     "lead": "If your brand is slowly becoming irrelevant, it's costing you 1-3% of market share every year. Our Brand Refresh Program stops the fade. We identify what still resonates, eliminate what doesn't, and evolve your brand to reclaim distinction and desirability.",
-    "accent": "#2f6fed",
-    "gradient": "linear-gradient(160deg, #6fa0ff 0%, #16224f 100%)",
+    "gallery": [
+      {
+        "type": "gallery-image",
+        "image": "/assets/show1.jpg"
+      },
+      {
+        "type": "gallery-image",
+        "image": "/assets/show2.jpg"
+      },
+      {
+        "type": "gallery-image",
+        "image": "/assets/show3.jpg"
+      },
+      {
+        "type": "gallery-image",
+        "image": "/assets/show4.jpg"
+      },
+      {
+        "type": "gallery-image",
+        "image": "/assets/show5.jpg"
+      },
+      {
+        "type": "gallery-quote",
+        "quote": "The pattern system was built to feel handmade at any scale, from a hang-tag to a shopfront."
+      },
+      {
+        "type": "gallery-quote",
+        "quote": "Consistency became a feature, not a constraint — every touchpoint now reads as unmistakably Little Planet."
+      }
+    ],
     "programFeatures": [
       {
         "title": "Brand Positioning & Messaging Guidelines",
@@ -251,48 +285,6 @@
       {
         "title": "Underinvestment",
         "description": "Having never been prioritized, your brand is underdeveloped and impedes your strategy."
-      }
-    ],
-    "categories": [
-      "branding",
-      "illustrations",
-      "design-strategy",
-      "information-design"
-    ],
-    "programTitle": "Program Features",
-    "programIntro": "Discover some features of this customizable program.",
-    "impactTitle": "Impact This Program Has Delivered",
-    "challengesTitle": "Common Challenges",
-    "challengesIntro": "If you're facing any of these challenges, we can customize our Brand Refresh Program to help.",
-    "wordmark": "Little Planet",
-    "gallery": [
-      {
-        "type": "gallery-image",
-        "image": "/assets/show1.jpg"
-      },
-      {
-        "type": "gallery-image",
-        "image": "/assets/show2.jpg"
-      },
-      {
-        "type": "gallery-image",
-        "image": "/assets/show3.jpg"
-      },
-      {
-        "type": "gallery-image",
-        "image": "/assets/show4.jpg"
-      },
-      {
-        "type": "gallery-image",
-        "image": "/assets/show5.jpg"
-      },
-      {
-        "type": "gallery-quote",
-        "quote": "The pattern system was built to feel handmade at any scale, from a hang-tag to a shopfront."
-      },
-      {
-        "type": "gallery-quote",
-        "quote": "Consistency became a feature, not a constraint — every touchpoint now reads as unmistakably Little Planet."
       }
     ]
   },
