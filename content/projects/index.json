@@ -181,28 +181,16 @@
       "design-strategy",
       "information-design"
     ],
-    "hero": "/assets/22612EEE-715D-4BE8-9ED2-DA075765ABD2.jpeg",
+    "hero": "/assets/lp.jpg",
     "lead": "If your brand is slowly becoming irrelevant, it's costing you 1-3% of market share every year. Our Brand Refresh Program stops the fade. We identify what still resonates, eliminate what doesn't, and evolve your brand to reclaim distinction and desirability.",
     "gallery": [
       {
         "type": "gallery-image",
-        "image": "/assets/show1.jpg"
+        "image": "/assets/A9A4770E-6429-4EE2-B405-5880EA6E5E44_1_105_c.jpeg"
       },
       {
         "type": "gallery-image",
-        "image": "/assets/show2.jpg"
-      },
-      {
-        "type": "gallery-image",
-        "image": "/assets/show3.jpg"
-      },
-      {
-        "type": "gallery-image",
-        "image": "/assets/show4.jpg"
-      },
-      {
-        "type": "gallery-image",
-        "image": "/assets/show5.jpg"
+        "image": "/assets/6532A473-169A-444D-ADF8-72A855647062_1_105_c.jpeg"
       },
       {
         "type": "gallery-quote",
@@ -211,6 +199,15 @@
       {
         "type": "gallery-quote",
         "quote": "Consistency became a feature, not a constraint — every touchpoint now reads as unmistakably Little Planet."
+      },
+      {
+        "type": "horizontal-image",
+        "image": "/assets/1F01B8C6-E347-4C2B-A477-654CBF3119F6_1_105_c 1.jpg"
+      },
+      {
+        "type": "image-grid",
+        "image1": "/assets/8C3C1891-42DE-49CC-A50D-D7B9BCE65022_1_102_o.jpeg",
+        "image2": "/assets/F5BC6EB5-E910-4908-BE44-C1C21EE84A12_1_102_o.jpeg"
       }
     ],
     "programFeatures": [
