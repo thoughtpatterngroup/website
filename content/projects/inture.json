@@ -1,5 +1,22 @@
 {
   "slug": "inture",
   "title": "Inture",
-  "gallery": []
+  "meta": "Branding, Illustration, Usability",
+  "categories": [
+    "usability",
+    "branding",
+    "illustrations"
+  ],
+  "hero": "/assets/intuere-logo-name-green2x.jpg",
+  "lead": "An online prediction app for fantasy cricket users, popular during the Indian Premier League (IPL).",
+  "programFeatures": [
+    {
+      "title": "Program Feature One",
+      "description": "Program Feature One"
+    },
+    {
+      "title": "Program Feature Two",
+      "description": "Program Feature Two"
+    }
+  ]
 }
