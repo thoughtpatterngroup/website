@@ -97,7 +97,7 @@ a { color: inherit; }
   min-height: calc(100vh - 92px);
 }
 .hero-section .site-container { display: flex; flex-direction: column; flex: 1 1 auto; }
-.hero-copy { margin-bottom: 26px; flex: 0 0 auto; }
+.hero-copy { margin-bottom: 86px; flex: 0 0 auto; }
 
 h1, h2, h3 {
   font-family: 'Merriweather', serif;
