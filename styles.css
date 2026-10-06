@@ -340,7 +340,7 @@ h2 {
 
 @media (max-width: 991.98px) {
   .navbar { min-height: 64px; padding-top: 17px; padding-bottom: 17px; }
-  .navbar-brand img { width: 300px; }
+  .navbar-brand img { width: 200px; }
   .hero-section { padding-top: 46px; min-height: auto; }
   .hero-copy { margin-bottom: 34px; }
   .hero-copy .intro-copy { margin-top: 22px; }
