@@ -72,7 +72,27 @@
       </div>
 
       <div class="hero-image-wrap">
-        <img id="landingHeroImage" src="assets/feature6.jpeg" class="img-fluid w-100 feature-image-wrap" alt="Startup illustration">
+        <video
+          id="landingHeroVideo"
+          class="img-fluid w-100 feature-image-wrap"
+          autoplay
+          muted
+          loop
+          playsinline
+          preload="metadata"
+          poster="assets/feature6.jpeg"
+          aria-label="The Thought Pattern hero video"
+        >
+          <source id="landingHeroVideoSource" src="" type="video/mp4">
+        </video>
+
+        <!-- Static image fallback. Hidden automatically when a hero video is configured. -->
+        <img
+          id="landingHeroImage"
+          src="assets/feature6.jpeg"
+          class="img-fluid w-100 feature-image-wrap hero-image-fallback"
+          alt="The Thought Pattern hero"
+        >
       </div>
     </div>
   </section>
@@ -324,8 +344,39 @@
         if (data.hero) {
           text(document.getElementById('landingHeroTitle'), data.hero.title);
           text(document.getElementById('landingHeroSubtitle'), data.hero.subtitle);
+
           var heroImage = document.getElementById('landingHeroImage');
-          if (heroImage && data.hero.image) heroImage.src = assetUrl(data.hero.image);
+          var heroVideo = document.getElementById('landingHeroVideo');
+          var heroVideoSource = document.getElementById('landingHeroVideoSource');
+
+          // Use the CMS-selected hero video when available.
+          // Otherwise keep the existing hero image as the fallback.
+          if (heroVideo && heroVideoSource && data.hero.video) {
+            var videoUrl = assetUrl(data.hero.video);
+            heroVideoSource.src = videoUrl;
+            var lowerVideoUrl = videoUrl.split('?')[0].toLowerCase();
+            if (lowerVideoUrl.endsWith('.webm')) {
+              heroVideoSource.type = 'video/webm';
+            } else if (lowerVideoUrl.endsWith('.mov')) {
+              heroVideoSource.type = 'video/quicktime';
+            } else {
+              heroVideoSource.type = 'video/mp4';
+            }
+            heroVideo.poster = data.hero.image ? assetUrl(data.hero.image) : '';
+            heroVideo.classList.add('is-active');
+            if (heroImage) heroImage.classList.add('is-hidden');
+            heroVideo.onerror = function () {
+              heroVideo.classList.remove('is-active');
+              if (heroImage) heroImage.classList.remove('is-hidden');
+            };
+            heroVideo.load();
+            var playPromise = heroVideo.play();
+            if (playPromise && typeof playPromise.catch === 'function') {
+              playPromise.catch(function () { /* Autoplay may be blocked by the browser. */ });
+            }
+          } else if (heroImage && data.hero.image) {
+            heroImage.src = assetUrl(data.hero.image);
+          }
         }
         if (data.showcase) {
           text(document.getElementById('landingShowcaseTitle'), data.showcase.title);
