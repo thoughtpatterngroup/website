@@ -123,83 +123,27 @@
   </section>
 
   <!-- Impact -->
-  <section class="wd-impact">
+  <section class="wd-impact" id="wdImpactSection">
     <div class="container site-container">
-      <h2 id="wdImpactTitle">
-        Impact This Program<br>
-        <span>Has Delivered</span>
-      </h2>
-      <div id="wdImpact" class="wd-impact-scroller">
-        <div class="wd-impact-card">
-          <div class="wd-impact-number">3x</div>
-          <div class="wd-impact-text">
-            <h4>Rapid Top-Line Growth</h4>
-            <p>Aligning the business with its expression, the refreshed brand enjoyed 3x growth in 18 months.</p>
-          </div>
-        </div>
-        <div class="wd-impact-card">
-          <div class="wd-impact-number">2.5x</div>
-          <div class="wd-impact-text">
-            <h4>Improvement as "Employer of Choice"</h4>
-            <p>The refreshed brand drove a 2.5x lift in "employer of choice" perception — attracting more and better talent.</p>
-          </div>
-        </div>
-        <div class="wd-impact-card">
-          <div class="wd-impact-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 19V5M6 11l6-6 6 6"/></svg>
-          </div>
-          <div class="wd-impact-text">
-            <h4>Increased Brand Distinction</h4>
-            <p>Refreshed, the brand was more memorable, standing out in a sea of sameness and staying top of mind.</p>
-          </div>
-        </div>
-        <div class="wd-impact-card">
-          <div class="wd-impact-number">40%</div>
-          <div class="wd-impact-text">
-            <h4>Faster Time-to-Market</h4>
-            <p>A systemized identity cut design and production cycles nearly in half.</p>
-          </div>
-        </div>
-      </div>
+      <h2 id="wdImpactTitle">Impact This Program Has Delivered</h2>
+      <div id="wdImpact" class="wd-impact-scroller"></div>
     </div>
   </section>
 
   <!-- Common Challenges -->
-  <section class="wd-challenges">
+  <section class="wd-challenges" id="wdChallengesSection">
     <div class="container site-container">
       <div class="wd-challenges-box">
         <div class="row wd-challenges-top align-items-start">
           <div class="col-lg-4">
             <h2 id="wdChallengesTitle">Common Challenges</h2>
           </div>
+          <div class="col-lg-7 offset-lg-1">
+            <p id="wdChallengesIntro">If you're facing any of these challenges, we can customize our program to help.</p>
+          </div>
         </div>
 
-        <div id="wdChallenges" class="row wd-challenges-grid">
-          <div class="col-md-4 wd-challenge">
-            <h4>Lack of Distinctiveness</h4>
-            <p>Your brand is missing out on the marketing efficiency that distinctiveness delivers.</p>
-          </div>
-          <div class="col-md-4 wd-challenge">
-            <h4>Unclear Value Proposition</h4>
-            <p>You can't articulate clearly what differentiates you from competitors.</p>
-          </div>
-          <div class="col-md-4 wd-challenge">
-            <h4>Bland Brand Narrative</h4>
-            <p>Your brand story leaves your customers indifferent and competitors unchallenged.</p>
-          </div>
-          <div class="col-md-4 wd-challenge">
-            <h4>Product Line Evolution</h4>
-            <p>You've evolved the product offerings and the brand needs to be updated to support it.</p>
-          </div>
-          <div class="col-md-4 wd-challenge">
-            <h4>Product-Brand Disconnect</h4>
-            <p>There's no coherence between how your brand appears in marketing and product.</p>
-          </div>
-          <div class="col-md-4 wd-challenge">
-            <h4>Underinvestment</h4>
-            <p>Having never been prioritized, your brand is underdeveloped and impedes your strategy.</p>
-          </div>
-        </div>
+        <div id="wdChallenges" class="row wd-challenges-grid"></div>
       </div>
     </div>
   </section>
@@ -449,68 +393,109 @@
    * ------------------------------------------------------------
    */
 
-  function renderImpact(items) {
+  function renderImpactSection(data) {
+
+    var section =
+      document.getElementById('wdImpactSection');
+
+    var title =
+      document.getElementById('wdImpactTitle');
 
     var wrap =
-      document.getElementById(
-        'wdImpact'
-      );
+      document.getElementById('wdImpact');
 
-    if (!wrap) {
+    if (!section || !wrap) {
       return;
     }
 
-    if (!Array.isArray(items)) {
+    /*
+     * Explicit false hides the entire section.
+     * Missing showImpact keeps the section visible for older JSON files.
+     */
+    if (data.showImpact === false) {
+      section.hidden = true;
       return;
     }
 
-    wrap.innerHTML = items.map(function (item) {
+    section.hidden = false;
+
+    if (title) {
+      title.textContent =
+        data.impactTitle ||
+        'Impact This Program Has Delivered';
+    }
+
+    wrap.innerHTML = '';
+
+    if (!Array.isArray(data.impact) || !data.impact.length) {
+      section.hidden = true;
+      return;
+    }
+
+    data.impact.forEach(function (item) {
+
+      if (!item) {
+        return;
+      }
+
+      var card =
+        document.createElement('div');
+
+      card.className = 'wd-impact-card';
 
       var metric =
-        item.metric || '';
+        String(item.metric || '');
 
-      var metricMarkup =
-        metric.toLowerCase() === 'up'
+      if (metric.toLowerCase() === 'up') {
 
-          ? (
-              '<div class="wd-impact-icon">' +
-                '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">' +
-                  '<path d="M12 19V5M6 11l6-6 6 6"/>' +
-                '</svg>' +
-              '</div>'
-            )
+        var icon =
+          document.createElement('div');
 
-          : (
-              '<div class="wd-impact-number">' +
-                metric +
-              '</div>'
-            );
+        icon.className = 'wd-impact-icon';
 
+        icon.innerHTML =
+          '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true">' +
+            '<path d="M12 19V5M6 11l6-6 6 6"/>' +
+          '</svg>';
 
-      return (
-        '<div class="wd-impact-card">' +
+        card.appendChild(icon);
 
-          metricMarkup +
+      } else {
 
-          '<div class="wd-impact-text">' +
+        var number =
+          document.createElement('div');
 
-            '<h4>' +
-              (item.title || '') +
-            '</h4>' +
+        number.className = 'wd-impact-number';
+        number.textContent = metric;
 
-            '<p>' +
-              (item.description || '') +
-            '</p>' +
+        card.appendChild(number);
 
-          '</div>' +
+      }
 
-        '</div>'
-      );
+      var text =
+        document.createElement('div');
 
-    }).join('');
+      text.className = 'wd-impact-text';
 
+      var heading =
+        document.createElement('h4');
+
+      heading.textContent =
+        item.title || '';
+
+      var description =
+        document.createElement('p');
+
+      description.textContent =
+        item.description || '';
+
+      text.appendChild(heading);
+      text.appendChild(description);
+      card.appendChild(text);
+      wrap.appendChild(card);
+
+    });
   }
-
 
   /*
    * ------------------------------------------------------------
@@ -518,41 +503,75 @@
    * ------------------------------------------------------------
    */
 
-  function renderChallenges(items) {
+  function renderChallengesSection(data) {
+
+    var section =
+      document.getElementById('wdChallengesSection');
+
+    var title =
+      document.getElementById('wdChallengesTitle');
 
     var wrap =
-      document.getElementById(
-        'wdChallenges'
-      );
+      document.getElementById('wdChallenges');
 
-    if (!wrap) {
+    if (!section || !wrap) {
       return;
     }
 
-    if (!Array.isArray(items)) {
+    /*
+     * Explicit false hides the entire section.
+     * Missing showChallenges keeps the section visible for older JSON files.
+     */
+    if (data.showChallenges === false) {
+      section.hidden = true;
       return;
     }
 
-    wrap.innerHTML = items.map(function (item) {
+    section.hidden = false;
 
-      return (
-        '<div class="col-md-4 wd-challenge">' +
+    if (title) {
+      title.textContent =
+        data.challengesTitle ||
+        'Common Challenges';
+    }
 
-          '<h4>' +
-            (item.title || '') +
-          '</h4>' +
+    wrap.innerHTML = '';
 
-          '<p>' +
-            (item.description || '') +
-          '</p>' +
+    if (!Array.isArray(data.challenges) || !data.challenges.length) {
+      section.hidden = true;
+      return;
+    }
 
-        '</div>'
-      );
+    data.challenges.forEach(function (item) {
 
-    }).join('');
+      if (!item) {
+        return;
+      }
 
+      var column =
+        document.createElement('div');
+
+      column.className =
+        'col-md-4 wd-challenge';
+
+      var heading =
+        document.createElement('h4');
+
+      heading.textContent =
+        item.title || '';
+
+      var description =
+        document.createElement('p');
+
+      description.textContent =
+        item.description || '';
+
+      column.appendChild(heading);
+      column.appendChild(description);
+      wrap.appendChild(column);
+
+    });
   }
-
 
   /*
  * ------------------------------------------------------------
@@ -1137,14 +1156,8 @@ function renderGallery(data) {
        * --------------------------------------------------------
        */
 
-      setText(
-        'wdImpactTitle',
-        data.impactTitle ||
-        'Impact This Program Has Delivered'
-      );
-
-      renderImpact(
-        data.impact
+      renderImpactSection(
+        data
       );
 
 
@@ -1155,19 +1168,13 @@ function renderGallery(data) {
        */
 
       setText(
-        'wdChallengesTitle',
-        data.challengesTitle ||
-        'Common Challenges'
-      );
-
-      setText(
         'wdChallengesIntro',
         data.challengesIntro ||
         'If you’re facing any of these challenges, we can customize our program to help.'
       );
 
-      renderChallenges(
-        data.challenges
+      renderChallengesSection(
+        data
       );
 
 
