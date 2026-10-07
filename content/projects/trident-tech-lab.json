@@ -6,7 +6,7 @@
     "usability",
     "design-strategy"
   ],
-  "hero": "/assets/E54A1044-B3F7-48EE-B06D-23496E895E43_1_102_o.jpeg",
+  "hero": "/assets/TTL_Desktop Wallpaper_D-layout_v2.0_17Feb26_Option 1.png",
   "lead": "Add the project introduction and case-study summary in PagesCMS.",
   "gallery": [
     {
@@ -17,5 +17,7 @@
       "type": "horizontal-image",
       "image": "/assets/E54A1044-B3F7-48EE-B06D-23496E895E43_1_102_o-1.jpeg"
     }
-  ]
+  ],
+  "showImpact": true,
+  "showChallenges": true
 }
