@@ -42,6 +42,29 @@
     {
       "type": "gallery-quote",
       "quote": "Consistency became a feature, not a constraint — every touchpoint now reads as unmistakably Little Planet."
+    },
+    {
+      "type": "image-grid",
+      "image1": "/assets/D5634DB0-7709-4BC1-BA36-716C8A4F6306_1_102_o.jpeg",
+      "image2": "/assets/EFDF9648-81C3-49EE-9211-5266FBB9E389_1_102_o.jpeg"
+    },
+    {
+      "type": "image-grid",
+      "image1": "/assets/CB9109A7-8BB3-4C4C-87EF-EA3F12072584_1_102_o.jpeg",
+      "image2": "/assets/ED0156B5-5C86-439C-9EFC-C34D26AD4740_1_105_c 1.jpg"
+    },
+    {
+      "type": "image-grid",
+      "image1": "/assets/AB1C5BDD-E8ED-4687-AC9B-6B2CB687650E_1_105_c.jpeg",
+      "image2": "/assets/80045DC2-E894-4277-960D-3C925DCD0F04_1_105_c.jpeg"
+    },
+    {
+      "type": "horizontal-image",
+      "image": "/assets/CF2F6D61-AC95-4F6A-8F6E-24C7EB253E91.jpeg"
+    },
+    {
+      "type": "horizontal-image",
+      "image": "/assets/22612EEE-715D-4BE8-9ED2-DA075765ABD2-1.jpeg"
     }
   ],
   "programFeatures": [
@@ -70,6 +93,7 @@
       "description": "Seamlessly unify your product experience with your brand."
     }
   ],
+  "showImpact": true,
   "impact": [
     {
       "metric": "5x",
@@ -92,6 +116,7 @@
       "description": "A systemized identity cut design and production cycles nearly in half."
     }
   ],
+  "showChallenges": true,
   "challenges": [
     {
       "title": "Lack of Distinctiveness",
