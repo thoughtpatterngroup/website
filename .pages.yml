@@ -312,8 +312,17 @@ content:
 
 
       # ----------------------------------------------------------
-      # IMPACT STATS
+      # IMPACT SECTION
       # ----------------------------------------------------------
+
+      - name: "showImpact"
+        label: "Show Impact Section"
+        type: "boolean"
+        default: true
+
+      - name: "impactTitle"
+        label: "Impact Section Heading"
+        type: "string"
 
       - name: "impact"
         label: "Impact Stats"
@@ -338,8 +347,17 @@ content:
 
 
       # ----------------------------------------------------------
-      # COMMON CHALLENGES
+      # COMMON CHALLENGES SECTION
       # ----------------------------------------------------------
+
+      - name: "showChallenges"
+        label: "Show Common Challenges Section"
+        type: "boolean"
+        default: true
+
+      - name: "challengesTitle"
+        label: "Common Challenges Section Heading"
+        type: "string"
 
       - name: "challenges"
         label: "Common Challenges"
