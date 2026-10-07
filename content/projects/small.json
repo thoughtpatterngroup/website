@@ -6,21 +6,16 @@
     "usability",
     "branding"
   ],
-  "hero": "/assets/show7.jpg",
+  "hero": "/assets/small_wp.jpg",
   "lead": "Add the project introduction and case-study summary in PagesCMS.",
-  "programTitle": "Project Details",
-  "programIntro": "Add the section introduction in PagesCMS.",
-  "impactTitle": "Impact",
-  "challengesTitle": "Challenges",
-  "challengesIntro": "Add the challenges section introduction in PagesCMS.",
-  "wordmark": "Small",
   "gallery": [
     {
       "type": "gallery-image",
       "image": "/assets/show7.jpg"
     }
   ],
-  "programFeatures": [],
-  "impact": [],
-  "challenges": []
+  "showImpact": true,
+  "impactTitle": "Impact",
+  "showChallenges": true,
+  "challengesTitle": "Challenges"
 }
